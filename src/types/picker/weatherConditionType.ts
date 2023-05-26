@@ -1,0 +1,10 @@
+export type weatherConditionType =
+    | "Klar"
+    | "Teilweise Bewölkt"
+    | "Bewölkt"
+    | "Meist Bewölkt"
+    | "Schauer"
+    | "Regen"
+    | "Gewitter"
+    | "Schnee"
+    | "Nebel"
