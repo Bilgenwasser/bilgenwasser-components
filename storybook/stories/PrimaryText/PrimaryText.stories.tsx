@@ -1,17 +1,17 @@
 import { text } from "@storybook/addon-knobs"
 import { storiesOf } from "@storybook/react-native"
 import { View } from "react-native"
-import Heading from "../../../src/components/Heading"
+import PrimaryText from "../../../src/components/PrimaryText"
 
-storiesOf("Heading", module)
+storiesOf("PrimaryText", module)
     .addDecorator((getStory) => <View style={{ flex: 1 }}>{getStory()}</View>)
     .add("Light", () => (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Heading forceTheme="light">{text("Text", "Heading")}</Heading>
+            <PrimaryText forceTheme="light">{text("Text", "PrimaryText")}</PrimaryText>
         </View>
     ))
     .add("Dark", () => (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "black" }}>
-            <Heading forceTheme="dark">{text("Text", "Heading")}</Heading>
+            <PrimaryText forceTheme="dark">{text("Text", "PrimaryText")}</PrimaryText>
         </View>
     ))
