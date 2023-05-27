@@ -1,5 +1,5 @@
 {
-    "name": "bilgenwasser-component-library",
+    "name": "bilgenwasser-components",
     "version": "1.0.0",
     "main": "node_modules/expo/AppEntry.js",
     "scripts": {
@@ -51,7 +51,6 @@
         "typescript": "^4.9.4",
         "webpack": "^5.84.1"
     },
-    "private": true,
     "peerDependencies": {
         "postcss": "^8.2.15"
     }
