@@ -1,20 +1,9 @@
-import { ReactNode } from "react"
 import { SafeAreaView, View } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps } from "../../types/primitivTypes"
 import { lightColors, universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-
-interface ViewContainerProps extends ThemeProps {
-    children?: ReactNode
-    noPadding?: boolean
-    noAlignment?: boolean
-}
-
-interface ContainerProps {
-    noPadding: boolean
-    noAlignment: boolean
-}
+import { ContainerProps, ViewContainerProps } from "./ViewContainer.types"
 
 const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: ViewContainerProps) => {
     return (

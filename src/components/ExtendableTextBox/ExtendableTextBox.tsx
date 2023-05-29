@@ -1,24 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import { ExtendableRowStateType } from "../../types/ExtendableTextBoxTypes"
-import { iconType } from "../../types/iconType"
-import { PickerRow } from "../../types/inputRowTypes"
-import { ThemeProps } from "../../types/primitivTypes"
 import Box from "../Box"
 import HStack from "../HStack"
 import VStack from "../VStack"
+import { ExtendableTextBoxProps } from "./ExtendableTextBox.types"
 import { ExtendableTextBoxControls } from "./ExtendableTextBoxControls"
 import { ExtendableTextBoxRow } from "./ExtendableTextBoxRow"
-
-interface ExtendableTextBoxProps extends ThemeProps {
-    defaultRowCount: number
-    minRowCount: number
-    maxRowCount: number
-    icon: iconType
-    placeholderText1: string
-    placeholderText2: string
-    pickerItems?: PickerRow[]
-    setValues?: (values: ExtendableRowStateType[]) => void
-}
 
 const ExtendableTextBox = ({
     defaultRowCount,

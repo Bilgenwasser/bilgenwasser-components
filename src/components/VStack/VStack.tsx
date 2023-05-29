@@ -1,10 +1,6 @@
-import { ReactNode } from "react"
 import { View } from "react-native"
 import styled from "styled-components"
-
-interface VStackProps {
-    children: ReactNode | ReactNode[]
-}
+import { VStackProps } from "./VStack.types"
 
 const VStack = ({ children }: VStackProps) => {
     return <StyledView>{children}</StyledView>

@@ -1,21 +1,8 @@
 import { Text } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
 import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-
-interface StyledTextProps extends StyledColorProps {
-    noMargin: boolean
-    alignCenter: boolean
-    forceColor?: string
-}
-
-interface HeadingProps extends ThemeProps {
-    children: string | string[]
-    noMargin?: boolean
-    alignCenter?: boolean
-    forceColor?: string
-}
+import { HeadingProps, StyledTextProps } from "./Heading.types"
 
 const Heading = ({ children: text, noMargin, alignCenter, forceColor, forceTheme }: HeadingProps) => {
     return (

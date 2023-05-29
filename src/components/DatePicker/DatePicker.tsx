@@ -5,13 +5,7 @@ import { Platform, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import Box from "../Box"
 import PrimaryText from "../PrimaryText"
-
-interface DatePickerProps {
-    date: Date
-    setDate: (date: Date) => void
-    minDate?: Date
-    maxDate?: Date
-}
+import { DatePickerProps } from "./DatePicker.types"
 
 const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps) => {
     const [showPicker, setShowPicker] = useState(false)

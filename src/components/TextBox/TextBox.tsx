@@ -1,7 +1,6 @@
 import { View } from "react-native"
 import styled from "styled-components"
-import { TextBoxRowProps } from "../../types/inputRowTypes"
-import { pickerType, textBoxStateType, ThemeProps } from "../../types/primitivTypes"
+import { pickerType } from "../../types/primitivTypes"
 import Box from "../Box"
 import Divider from "../Divider"
 import HStack from "../HStack"
@@ -10,17 +9,7 @@ import InputField from "../InputField"
 import Picker from "../Picker"
 import PrimaryText from "../PrimaryText"
 import VStack from "../VStack"
-
-interface TextBoxProps extends ThemeProps {
-    inputRows: TextBoxRowProps[]
-    setValues?: (values: (prevValues: textBoxStateType) => textBoxStateType) => void
-    alignInputRight?: boolean
-    sheet?: boolean
-}
-
-interface InputContainerProps {
-    align?: boolean
-}
+import { InputContainerProps, TextBoxProps } from "./TextBox.types"
 
 const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: TextBoxProps) => {
     return (

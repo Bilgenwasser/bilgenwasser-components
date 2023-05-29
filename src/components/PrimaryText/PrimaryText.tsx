@@ -1,17 +1,8 @@
 import { Text } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
 import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-
-interface StyledTextProps extends StyledColorProps {
-    forceColor?: string
-}
-
-interface PrimaryTextProps extends ThemeProps {
-    children: string | string[]
-    forceColor?: string
-}
+import { PrimaryTextProps, StyledTextProps } from "./PrimaryText.types"
 
 const PrimaryText = ({ children: text, forceColor, forceTheme }: PrimaryTextProps) => {
     return (

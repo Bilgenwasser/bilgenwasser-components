@@ -1,22 +1,12 @@
 import { useEffect, useState } from "react"
 import { View } from "react-native"
 import styled from "styled-components"
-import { ExtendableRowStateType } from "../../types/ExtendableTextBoxTypes"
-import { iconType } from "../../types/iconType"
-import { PickerRow } from "../../types/inputRowTypes"
-import { optionalString, pickerType, ThemeProps } from "../../types/primitivTypes"
+import { optionalString, pickerType } from "../../types/primitivTypes"
 import HStack from "../HStack"
 import Icon from "../Icon"
 import InputField from "../InputField"
 import Picker from "../Picker"
-
-interface TextBoxProps extends ThemeProps {
-    icon: iconType
-    placeholderText1: string
-    placeholderText2: string
-    pickerItems?: PickerRow[]
-    setValue: (data: ExtendableRowStateType) => void
-}
+import { TextBoxProps } from "./ExtendableTextBoxRow.types"
 
 export const ExtendableTextBoxRow = ({
     icon,

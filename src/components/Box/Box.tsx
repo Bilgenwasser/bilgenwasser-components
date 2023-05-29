@@ -1,21 +1,8 @@
-import { ReactNode } from "react"
 import { View } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
 import { darkColors, lightColors, universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-
-interface BoxProps extends ThemeProps {
-    children?: ReactNode
-    sheet?: boolean
-    transparent?: boolean
-    noMargin?: boolean
-}
-
-interface StyledViewProps extends StyledColorProps {
-    transparent?: boolean
-    noMargin?: boolean
-}
+import { BoxProps, StyledViewProps } from "./Box.types"
 
 const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxProps) => {
     return (

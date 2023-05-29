@@ -1,16 +1,10 @@
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps } from "../../types/primitivTypes"
 import { darkColors, lightColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import HStack from "../HStack"
 import { ExtendableTextBoxControlButton } from "./ExtendableTextBoxControlButton"
-
-interface ExtendableTextBoxControlsProps extends ThemeProps {
-    minRowCount: number
-    maxRowCount: number
-    rowCount: number
-    setRowCount: any
-}
+import { ExtendableTextBoxControlsProps } from "./ExtendableTextBoxControls.types"
 
 export const ExtendableTextBoxControls = ({
     minRowCount,
@@ -42,7 +36,7 @@ export const ExtendableTextBoxControls = ({
 const ControlsContainer = styled(HStack)<StyledColorProps>`
     align-items: center;
     justify-content: center;
-    width: 100%
+    width: 100%;
     height: 30px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

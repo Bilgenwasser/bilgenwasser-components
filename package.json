@@ -23,6 +23,7 @@
         "@react-native-community/datetimepicker": "6.7.3",
         "@react-native-community/slider": "^4.4.2",
         "@storybook/addon-actions": "^6.5.14",
+        "@storybook/addon-knobs": "^7.0.2",
         "@storybook/addon-links": "^7.0.17",
         "@storybook/addon-ondevice-actions": "^6.5.3",
         "@storybook/addon-ondevice-knobs": "^6.5.3",

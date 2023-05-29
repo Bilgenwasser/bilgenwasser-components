@@ -1,19 +1,11 @@
 import BottomSheet from "@gorhom/bottom-sheet"
-import { ReactNode, useRef } from "react"
+import { useRef } from "react"
 import { Modal, Platform, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { ThemeProps } from "../../types/primitivTypes"
 import { darkColors, lightColors, universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import Icon from "../Icon"
-
-interface ModalSheetProps extends ThemeProps {
-    children?: ReactNode
-    snapPoints?: string[]
-    isSheetVisible: boolean
-    setIsSheetVisible: (isVisible: boolean) => void
-    triggerSheet: (index: number) => void
-}
+import { ModalSheetProps } from "./ModalSheet.types"
 
 const ModalSheet = ({
     children,

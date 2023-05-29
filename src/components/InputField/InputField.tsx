@@ -1,25 +1,8 @@
-import { KeyboardType, TextInput } from "react-native"
+import { TextInput } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
 import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-
-interface InputFieldProps extends ThemeProps {
-    value?: string
-    setValue?: (value: string) => void
-    editable?: boolean
-    keyboardType?: KeyboardType
-    placeholderText?: string
-    maxLength?: number
-    hideText?: boolean
-    endText?: boolean
-    alignRight?: boolean
-}
-
-interface StyledTextInputProps extends StyledColorProps {
-    endText: boolean
-    alginRight: boolean
-}
+import { InputFieldProps, StyledTextInputProps } from "./InputField.types"
 
 const InputField = ({
     value,

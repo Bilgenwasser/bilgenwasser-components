@@ -1,29 +1,9 @@
-import { ReactNode, useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, ScrollView, useColorScheme, View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../utils/theming/colors"
 import HStack from "../HStack"
-
-interface PaginationProps {
-    children: ReactNode[]
-    itemSpacing?: number
-    itemWidth?: number
-}
-
-interface SpacerProps {
-    width: number
-}
-
-interface DotProps {
-    color: string
-}
-
-interface ImageContainerProps {
-    width: number
-    spacing: number
-    first: boolean
-    last: boolean
-}
+import { DotProps, ImageContainerProps, PaginationProps, SpacerProps } from "./Pagination.types"
 
 const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
     const [currentPage, setCurrentPage] = useState<number>(0)

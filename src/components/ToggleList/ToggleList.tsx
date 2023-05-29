@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { FlatList, Switch, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { ToggleRow } from "../../types/inputRowTypes"
 import { useModalSheet } from "../../utils/hooks/useModalSheet"
 import { useToggles } from "../../utils/hooks/useToggles"
 import { universalColors } from "../../utils/theming/colors"
@@ -11,11 +10,7 @@ import Icon from "../Icon"
 import ModalSheet from "../ModalSheet"
 import PrimaryText from "../PrimaryText"
 import VStack from "../VStack"
-
-interface ToggleListProps {
-    inputRows: ToggleRow[]
-    setValues?: (values: boolean[]) => void
-}
+import { ToggleListProps } from "./ToggleList.types"
 
 const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
     const { isEnabled, toggleSwitch } = useToggles(inputRows)

@@ -3,18 +3,7 @@ import styled from "styled-components"
 import { universalColors } from "../../utils/theming/colors"
 import Heading from "../Heading"
 import HStack from "../HStack"
-
-interface PrimaryButtonProps {
-    children: string | string[]
-    onPress?: (event: any) => void
-    smallMargin?: boolean
-    disabled?: boolean
-}
-
-interface BackgroundProps {
-    disabled: boolean
-    smallMargin: boolean
-}
+import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
 
 const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
     return (

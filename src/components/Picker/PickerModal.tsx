@@ -1,9 +1,6 @@
 import { useRef, useState } from "react"
 import { Modal, Pressable, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { iconType } from "../../types/iconType"
-import { PickerRow } from "../../types/inputRowTypes"
-import { dimensionType, positionType, ThemeProps } from "../../types/primitivTypes"
 import { useScreenDimensions, useViewDimensions } from "../../utils/hooks/useView"
 import Box from "../Box"
 import Divider from "../Divider"
@@ -11,21 +8,7 @@ import HStack from "../HStack"
 import Icon from "../Icon"
 import PrimaryText from "../PrimaryText"
 import VStack from "../VStack"
-
-interface PickerModalProps extends ThemeProps {
-    options: PickerRow[]
-    isPickerVisible: boolean
-    setPickerText: (text: string) => void
-    setPickerIcon: (icon: iconType) => void
-    handlePickerState: () => void
-    pickerPosition: positionType
-}
-
-interface ModalViewProps {
-    position: positionType
-    dimensions: dimensionType
-    screenDimensions: dimensionType
-}
+import { ModalViewProps, PickerModalProps } from "./PickerModal.types"
 
 export const PickerModal = ({
     options,
