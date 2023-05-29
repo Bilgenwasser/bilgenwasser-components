@@ -3,13 +3,7 @@ import styled from "styled-components"
 import { universalColors } from "../../utils/theming/colors"
 import HStack from "../HStack"
 import Icon from "../Icon"
-
-interface BackNavigationProps {
-    navigation: any
-    text: string
-    toggleBoolean?: boolean
-    setToggleBoolean?: (boolean: boolean) => void
-}
+import { BackNavigationProps } from "./BackNavigation.types"
 
 const BackNavigation = ({ navigation, text, toggleBoolean, setToggleBoolean }: BackNavigationProps) => {
     return (
