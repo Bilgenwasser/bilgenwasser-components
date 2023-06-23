@@ -17,6 +17,6 @@ export const PrimaryText = ({ children: text, forceColor, forceTheme }: PrimaryT
 
 const StyledText = styled(Text)<StyledTextProps>`
     font-size: 16px;
-    color: ${({ color, forceColor }) => (forceColor ? forceColor : color)};
+    color: ${({ color, forceColor }) => forceColor ?? color};
     margin: 4px;
 `

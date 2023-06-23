@@ -22,7 +22,7 @@ export const ModalSheet = ({
             <ModalView>
                 <BottomSheet
                     ref={modalSheetRef}
-                    snapPoints={snapPoints ? snapPoints : [Platform.OS == "ios" ? "93%" : "100%"]}
+                    snapPoints={snapPoints ?? [Platform.OS == "ios" ? "93%" : "100%"]}
                     onChange={triggerSheet}
                     backgroundStyle={{
                         backgroundColor: getTheme(forceTheme, darkColors.SystemGray6, lightColors.SystemGray5),

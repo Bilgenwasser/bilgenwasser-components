@@ -21,6 +21,6 @@ const StyledText = styled(Text)<StyledTextProps>`
     font-size: 24px;
     font-weight: bold;
     text-align: ${({ alignCenter }) => (alignCenter ? "center" : "left")};
-    color: ${({ color, forceColor }) => (forceColor ? forceColor : color)};
+    color: ${({ color, forceColor }) => forceColor ?? color};
     margin: 0 ${({ noMargin }) => (noMargin ? "" : "10px")};
 `

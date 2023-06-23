@@ -6,7 +6,7 @@ import { IconProps, StyledImageProps } from "./Icon.types"
 export const Icon = ({ name, size, rotation, forceTheme }: IconProps) => {
     const icons = useIcons(forceTheme)
 
-    return <StyledImage source={icons[name]} size={size ? size : 24} rotation={rotation ? rotation : 0} />
+    return <StyledImage source={icons[name]} size={size ?? 24} rotation={rotation ? rotation : 0} />
 }
 
 const StyledImage = styled(Image)<StyledImageProps>`

@@ -14,8 +14,8 @@ export const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps
     const defaultWidth = 0.92
     const defaultSpacing = screenWidth * ((1 - defaultWidth) / 2)
 
-    const pageWidth = screenWidth * (itemWidth ? itemWidth : defaultWidth)
-    const spacerWidth = (screenWidth * (1 - (itemWidth ? itemWidth : defaultWidth))) / 2
+    const pageWidth = screenWidth * (itemWidth ?? defaultWidth)
+    const spacerWidth = (screenWidth * (1 - (itemWidth ?? defaultWidth))) / 2
     const handleScrollEnd = useCallback((event: NativeSyntheticEvent<NativeScrollEvent>): void => {
         const xOffset = event.nativeEvent.contentOffset.x
         const newIndex = Math.floor(xOffset / pageWidth)
@@ -39,7 +39,7 @@ export const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 decelerationRate="fast"
-                snapToInterval={pageWidth + 2 * (itemSpacing ? itemSpacing : defaultSpacing)}
+                snapToInterval={pageWidth + 2 * (itemSpacing ?? defaultSpacing)}
                 onMomentumScrollEnd={handleScrollEnd}
             >
                 <Spacer width={spacerWidth} />
@@ -47,7 +47,7 @@ export const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps
                     <PageContainer
                         key={index}
                         width={pageWidth}
-                        spacing={itemSpacing ? itemSpacing : defaultSpacing}
+                        spacing={itemSpacing ?? defaultSpacing}
                         first={index === 0}
                         last={index === children.length - 1}
                     >
