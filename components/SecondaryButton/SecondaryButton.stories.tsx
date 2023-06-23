@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import styled from "styled-components"
+import { ViewContainer } from "../ViewContainer/ViewContainer"
 import { SecondaryButton } from "./SecondaryButton"
 
 const SecondaryButtonMeta: ComponentMeta<typeof SecondaryButton> = {
@@ -37,15 +37,11 @@ export default SecondaryButtonMeta
 type SecondaryButtonStory = ComponentStory<typeof SecondaryButton>
 
 export const Default: SecondaryButtonStory = (args) => (
-    <StyledView>
-        <SecondaryButton color={args.color} onPress={args.onPress}>
-            {args.children}
-        </SecondaryButton>
-    </StyledView>
+    <ViewContainer>
+        <View style={{ justifyContent: "center", height: "100%" }}>
+            <SecondaryButton color={args.color} onPress={args.onPress}>
+                {args.children}
+            </SecondaryButton>
+        </View>
+    </ViewContainer>
 )
-
-const StyledView = styled(View)`
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-`

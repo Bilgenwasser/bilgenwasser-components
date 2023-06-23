@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import styled from "styled-components"
+import { ViewContainer } from "../ViewContainer/ViewContainer"
 import { PrimaryButton } from "./PrimaryButton"
 
 const PrimaryButtonMeta: ComponentMeta<typeof PrimaryButton> = {
@@ -43,16 +43,11 @@ export default PrimaryButtonMeta
 type PrimaryButtonStory = ComponentStory<typeof PrimaryButton>
 
 export const Default: PrimaryButtonStory = (args) => (
-    <StyledView>
-        <PrimaryButton smallMargin={args.smallMargin} disabled={args.disabled} onPress={args.onPress}>
-            {args.children}
-        </PrimaryButton>
-    </StyledView>
+    <ViewContainer>
+        <View style={{ justifyContent: "center", height: "100%" }}>
+            <PrimaryButton smallMargin={args.smallMargin} disabled={args.disabled} onPress={args.onPress}>
+                {args.children}
+            </PrimaryButton>
+        </View>
+    </ViewContainer>
 )
-
-const StyledView = styled(View)`
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    padding: 0 4%;
-`
