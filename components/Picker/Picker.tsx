@@ -14,7 +14,7 @@ import { PickerModal } from "./PickerModal"
 
 export const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }: PickerProps) => {
     const [isPickerVisible, setIsPickerVisible] = useState<boolean>(false)
-    const [pickerItem, setPickerText] = useState<optionalString>(value ? value.item : null)
+    const [pickerItem, setPickerText] = useState<optionalString>(value ? value.text : null)
     const [pickerIcon, setPickerIcon] = useState<iconType | null>(value ? value.icon : null)
 
     const viewRef = useRef<TouchableOpacity>(null)
@@ -25,12 +25,12 @@ export const Picker = ({ placeholderText, options, value, setValue, sheet, force
     }, [])
 
     useEffect(() => {
-        value && setPickerText(value.item)
+        value && setPickerText(value.text)
         value && setPickerIcon(value.icon)
     }, [value])
 
     useEffect(() => {
-        setValue && setValue({ item: pickerItem!, icon: pickerIcon! })
+        setValue && setValue({ text: pickerItem!, icon: pickerIcon! })
     }, [pickerItem, pickerIcon])
 
     return (

@@ -51,7 +51,8 @@ const getStories = () => {
   return {
     "./components/Box/Box.stories.tsx": require("../components/Box/Box.stories.tsx"),
     "./components/Heading/Heading.stories.tsx": require("../components/Heading/Heading.stories.tsx"),
-    "./components/PrimaryButton/PrimaryButtton.stories.tsx": require("../components/PrimaryButton/PrimaryButtton.stories.tsx"),
+    "./components/Picker/Picker.stories.tsx": require("../components/Picker/Picker.stories.tsx"),
+    "./components/PrimaryButton/PrimaryButton.stories.tsx": require("../components/PrimaryButton/PrimaryButton.stories.tsx"),
     "./components/PrimaryText/PrimaryText.stories.tsx": require("../components/PrimaryText/PrimaryText.stories.tsx"),
     "./components/SecondaryButton/SecondaryButton.stories.tsx": require("../components/SecondaryButton/SecondaryButton.stories.tsx"),
     "./components/SecondaryText/SecondaryText.stories.tsx": require("../components/SecondaryText/SecondaryText.stories.tsx"),

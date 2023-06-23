@@ -7,7 +7,7 @@ export type positionType = { x: number; y: number }
 
 export type themeType = "dark" | "light" | undefined
 
-export type pickerType = { item: string; icon: iconType }
+export type pickerType = { text: string; icon: iconType }
 
 export type textBoxStateType = (optionalString | pickerType)[]
 
