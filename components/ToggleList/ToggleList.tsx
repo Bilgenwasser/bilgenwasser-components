@@ -5,11 +5,11 @@ import { useModalSheet } from "../../utils/hooks/useModalSheet"
 import { useToggles } from "../../utils/hooks/useToggles"
 import { universalColors } from "../../utils/theming/colors"
 import { Heading } from "../Heading/Heading"
-import { HStack } from "../HStack/HStack"
 import { Icon } from "../Icon/Icon"
 import { ModalSheet } from "../ModalSheet/ModalSheet"
 import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { VStack } from "../VStack/VStack"
+import { HStack } from "../Stacks/HStack"
+import { VStack } from "../Stacks/VStack"
 import { ToggleListProps } from "./ToggleList.types"
 
 export const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {

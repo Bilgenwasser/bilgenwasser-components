@@ -4,10 +4,10 @@ import styled from "styled-components"
 import { useScreenDimensions, useViewDimensions } from "../../utils/hooks/useView"
 import { Box } from "../Box/Box"
 import { Divider } from "../Divider/Divider"
-import { HStack } from "../HStack/HStack"
 import { Icon } from "../Icon/Icon"
 import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { VStack } from "../VStack/VStack"
+import { HStack } from "../Stacks/HStack"
+import { VStack } from "../Stacks/VStack"
 import { ModalViewProps, PickerModalProps } from "./PickerModal.types"
 
 export const PickerModal = ({

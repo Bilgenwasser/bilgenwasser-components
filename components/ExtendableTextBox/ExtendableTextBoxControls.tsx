@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { StyledColorProps } from "../../types/primitivTypes"
 import { darkColors, lightColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-import { HStack } from "../HStack/HStack"
+import { HStack } from "../Stacks/HStack"
 import { ExtendableTextBoxControlButton } from "./ExtendableTextBoxControlButton"
 import { ExtendableTextBoxControlsProps } from "./ExtendableTextBoxControls.types"
 
