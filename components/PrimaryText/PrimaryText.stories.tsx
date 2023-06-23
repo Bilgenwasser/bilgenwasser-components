@@ -32,8 +32,4 @@ export default PrimaryTextMeta
 
 type PrimaryTextStory = ComponentStory<typeof PrimaryText>
 
-export const Default: PrimaryTextStory = (args) => (
-    <PrimaryText forceColor={args.forceColor} forceTheme={args.forceTheme}>
-        {args.children}
-    </PrimaryText>
-)
+export const Default: PrimaryTextStory = (args) => <PrimaryText {...args}>{args.children}</PrimaryText>

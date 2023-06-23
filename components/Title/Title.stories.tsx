@@ -32,8 +32,4 @@ export default TitleMeta
 
 type TitleStory = ComponentStory<typeof Title>
 
-export const Default: TitleStory = (args) => (
-    <Title smallMargin={args.smallMargin} forceTheme={args.forceTheme}>
-        {args.children}
-    </Title>
-)
+export const Default: TitleStory = (args) => <Title {...args}>{args.children}</Title>

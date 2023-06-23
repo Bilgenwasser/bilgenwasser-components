@@ -42,13 +42,4 @@ export default HeadingMeta
 
 type HeadingStory = ComponentStory<typeof Heading>
 
-export const Default: HeadingStory = (args) => (
-    <Heading
-        noMargin={args.noMargin}
-        alignCenter={args.alignCenter}
-        forceColor={args.forceColor}
-        forceTheme={args.forceTheme}
-    >
-        {args.children}
-    </Heading>
-)
+export const Default: HeadingStory = (args) => <Heading {...args}>{args.children}</Heading>

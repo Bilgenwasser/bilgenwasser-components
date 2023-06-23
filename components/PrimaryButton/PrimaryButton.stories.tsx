@@ -45,9 +45,7 @@ type PrimaryButtonStory = ComponentStory<typeof PrimaryButton>
 export const Default: PrimaryButtonStory = (args) => (
     <ViewContainer>
         <View style={{ justifyContent: "center", height: "100%" }}>
-            <PrimaryButton smallMargin={args.smallMargin} disabled={args.disabled} onPress={args.onPress}>
-                {args.children}
-            </PrimaryButton>
+            <PrimaryButton {...args}>{args.children}</PrimaryButton>
         </View>
     </ViewContainer>
 )

@@ -40,12 +40,7 @@ type BoxStory = ComponentStory<typeof Box>
 export const Default: BoxStory = (args) => (
     <ViewContainer>
         <View style={{ flex: 1, width: "100%", justifyContent: "center" }}>
-            <Box
-                forceTheme={args.forceTheme}
-                sheet={args.sheet}
-                transparent={args.transparent}
-                noMargin={args.noMargin}
-            >
+            <Box {...args}>
                 <Heading alignCenter forceTheme={args.forceTheme}>
                     Box
                 </Heading>

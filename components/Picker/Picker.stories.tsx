@@ -92,14 +92,7 @@ type PickerStory = ComponentStory<typeof Picker>
 export const Default: PickerStory = (args) => (
     <ViewContainer>
         <View style={{ justifyContent: "center", height: "100%" }}>
-            <Picker
-                options={args.options}
-                placeholderText={args.placeholderText}
-                value={args.value}
-                forceTheme={args.forceTheme}
-                sheet={args.sheet}
-                setValue={args.setValue}
-            />
+            <Picker {...args} />
         </View>
     </ViewContainer>
 )

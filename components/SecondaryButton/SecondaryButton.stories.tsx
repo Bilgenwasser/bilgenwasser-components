@@ -39,9 +39,7 @@ type SecondaryButtonStory = ComponentStory<typeof SecondaryButton>
 export const Default: SecondaryButtonStory = (args) => (
     <ViewContainer>
         <View style={{ justifyContent: "center", height: "100%" }}>
-            <SecondaryButton color={args.color} onPress={args.onPress}>
-                {args.children}
-            </SecondaryButton>
+            <SecondaryButton {...args}>{args.children}</SecondaryButton>
         </View>
     </ViewContainer>
 )
