@@ -50,6 +50,7 @@ try {
 const getStories = () => {
   return {
     "./components/Box/Box.stories.tsx": require("../components/Box/Box.stories.tsx"),
+    "./components/DatePicker/DatePicker.stories.tsx": require("../components/DatePicker/DatePicker.stories.tsx"),
     "./components/Heading/Heading.stories.tsx": require("../components/Heading/Heading.stories.tsx"),
     "./components/Picker/Picker.stories.tsx": require("../components/Picker/Picker.stories.tsx"),
     "./components/PrimaryButton/PrimaryButton.stories.tsx": require("../components/PrimaryButton/PrimaryButton.stories.tsx"),
