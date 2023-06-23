@@ -55,6 +55,7 @@ const getStories = () => {
     "./components/ExtendableTextBox/ExtendableTextBox.stories.tsx": require("../components/ExtendableTextBox/ExtendableTextBox.stories.tsx"),
     "./components/Heading/Heading.stories.tsx": require("../components/Heading/Heading.stories.tsx"),
     "./components/Icon/Icon.stories.tsx": require("../components/Icon/Icon.stories.tsx"),
+    "./components/InputField/InputField.stories.tsx": require("../components/InputField/InputField.stories.tsx"),
     "./components/Picker/Picker.stories.tsx": require("../components/Picker/Picker.stories.tsx"),
     "./components/PrimaryButton/PrimaryButton.stories.tsx": require("../components/PrimaryButton/PrimaryButton.stories.tsx"),
     "./components/PrimaryText/PrimaryText.stories.tsx": require("../components/PrimaryText/PrimaryText.stories.tsx"),
