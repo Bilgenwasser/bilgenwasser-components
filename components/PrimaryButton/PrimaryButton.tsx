@@ -2,16 +2,15 @@ import { TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../utils/theming/colors"
 import { Heading } from "../Heading/Heading"
-import { HStack } from "../HStack/HStack"
 import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
 
 export const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
     return (
         <StyledTouchableOpacity onPress={onPress} disabled={disabled}>
             <Background disabled={!!disabled} smallMargin={!!smallMargin}>
-                <StyledHStack>
+                <CenteredView>
                     <Heading forceTheme="dark">{text}</Heading>
-                </StyledHStack>
+                </CenteredView>
             </Background>
         </StyledTouchableOpacity>
     )
@@ -28,7 +27,7 @@ const Background = styled(View)<BackgroundProps>`
     border-radius: 15px;
 `
 
-const StyledHStack = styled(HStack)`
+const CenteredView = styled(View)`
     height: 100%;
     align-self: center;
     justify-content: center;
