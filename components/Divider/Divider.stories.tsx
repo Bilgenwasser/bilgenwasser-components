@@ -47,8 +47,9 @@ export const Bold: DividerStory = (args) => (
                     <PrimaryText forceTheme={args.forceTheme}>Content</PrimaryText>
                 </View>
                 <Divider thickness="bold" forceTheme={args.forceTheme} />
-                <View style={{ alignSelf: "center" }}></View>
-                <PrimaryText forceTheme={args.forceTheme}>Content</PrimaryText>
+                <View style={{ alignSelf: "center" }}>
+                    <PrimaryText forceTheme={args.forceTheme}>Content</PrimaryText>
+                </View>
             </Box>
         </View>
     </ViewContainer>
