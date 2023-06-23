@@ -38,7 +38,7 @@ export const ExtendableTextBox = ({
     }, [rowCount])
 
     return (
-        <Box>
+        <Box forceTheme={forceTheme}>
             <VStack>
                 {rowStates.map((row, index) => (
                     <HStack key={index}>

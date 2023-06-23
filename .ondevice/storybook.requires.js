@@ -52,6 +52,7 @@ const getStories = () => {
     "./components/Box/Box.stories.tsx": require("../components/Box/Box.stories.tsx"),
     "./components/DatePicker/DatePicker.stories.tsx": require("../components/DatePicker/DatePicker.stories.tsx"),
     "./components/Divider/Divider.stories.tsx": require("../components/Divider/Divider.stories.tsx"),
+    "./components/ExtendableTextBox/ExtendableTextBox.stories.tsx": require("../components/ExtendableTextBox/ExtendableTextBox.stories.tsx"),
     "./components/Heading/Heading.stories.tsx": require("../components/Heading/Heading.stories.tsx"),
     "./components/Picker/Picker.stories.tsx": require("../components/Picker/Picker.stories.tsx"),
     "./components/PrimaryButton/PrimaryButton.stories.tsx": require("../components/PrimaryButton/PrimaryButton.stories.tsx"),

@@ -31,7 +31,7 @@ const StyledTouchableOpacity = styled(TouchableOpacity)<StyledColorProps>`
     height: 18px;
     width: 18px;
     border-radius: 15px;
-    background: ${({ color }) => color}
+    background: ${({ color }) => color};
     justify-content: center;
     align-items: center;
 `

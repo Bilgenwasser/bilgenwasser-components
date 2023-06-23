@@ -26,7 +26,7 @@ export const ExtendableTextBoxRow = ({
     return (
         <SpacedHStack>
             <HStack>
-                <Icon name={icon} size={20} />
+                <Icon name={icon} size={20} forceTheme={forceTheme} />
                 <StyledView>
                     <InputField placeholderText={placeholderText1} setValue={setText1} />
                 </StyledView>
