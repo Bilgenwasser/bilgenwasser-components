@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { FlatList, Switch, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { useModalSheet } from "../../utils/hooks/useModalSheet"
+import { useModalSheet } from "../../shared/useModalSheet"
 import { useToggles } from "../../utils/hooks/useToggles"
 import { universalColors } from "../../utils/theming/colors"
 import { Heading } from "../Heading/Heading"
