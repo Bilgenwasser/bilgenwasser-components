@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
+echo "Running commitlint..."
 
 npx ts-node scripts/prependGitmoji.ts $1 && npx commitlint --edit
