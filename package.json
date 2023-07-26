@@ -8,6 +8,7 @@
         "storybook-generate": "sb-rn-get-stories --config-path .ondevice",
         "storybook-watch": "sb-rn-watcher --config-path .ondevice",
         "storybook": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start",
+        "postinstall": "husky install",
         "ios": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start --ios",
         "android": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start --android"
     },
