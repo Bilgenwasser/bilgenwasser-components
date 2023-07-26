@@ -13,7 +13,7 @@ import { InputContainerProps, TextBoxProps } from "./TextBox.types"
 
 export const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: TextBoxProps) => {
     return (
-        <Box sheet={sheet}>
+        <Box sheet={sheet} forceTheme={forceTheme}>
             {inputRows.map((row, index) => {
                 return (
                     <VStack key={row.name + index}>
@@ -21,8 +21,13 @@ export const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, she
                         <SpacedHStack>
                             <ContentContainer>
                                 <HStack>
-                                    <Icon name={row.icon} size={24} rotation={row.icon === "arrow" ? 45 : 0} />
-                                    <PrimaryText>{row.name}</PrimaryText>
+                                    <Icon
+                                        name={row.icon}
+                                        size={24}
+                                        rotation={row.icon === "arrow" ? 45 : 0}
+                                        forceTheme={forceTheme}
+                                    />
+                                    <PrimaryText forceTheme={forceTheme}>{row.name}</PrimaryText>
                                 </HStack>
                             </ContentContainer>
                             {row.picker ? (
