@@ -64,6 +64,7 @@ const getStories = () => {
     "./components/SecondaryText/SecondaryText.stories.tsx": require("../components/SecondaryText/SecondaryText.stories.tsx"),
     "./components/TextBox/TextBox.stories.tsx": require("../components/TextBox/TextBox.stories.tsx"),
     "./components/Title/Title.stories.tsx": require("../components/Title/Title.stories.tsx"),
+    "./components/ToggleList/ToggleList.stories.tsx": require("../components/ToggleList/ToggleList.stories.tsx"),
   };
 };
 
