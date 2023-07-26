@@ -89,6 +89,6 @@ const StyledHStack = styled(HStack)`
     margin-bottom: 10px;
 `
 
-const PaddedVStack = styled(HStack)`
+const PaddedVStack = styled(VStack)`
     padding: 7px 0;
 `
