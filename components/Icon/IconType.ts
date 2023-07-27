@@ -1,4 +1,4 @@
-export type iconType =
+export type IconType =
     | "arrow"
     | "calendar"
     | "clock"

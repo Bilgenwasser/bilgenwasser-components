@@ -1,8 +1,8 @@
-import { iconType } from "../../types/iconType"
 import { ThemeProps } from "../../types/primitivTypes"
+import { IconType } from "../Icon/IconType"
 
 export interface ExtendableTextBoxControlButtonProps extends ThemeProps {
-    icon: iconType
+    icon: IconType
     onPress?: () => void
     disabled?: boolean
 }

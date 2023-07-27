@@ -1,13 +1,13 @@
 import { ExtendableRowStateType } from "../../types/ExtendableTextBoxTypes"
-import { iconType } from "../../types/iconType"
 import { PickerRow } from "../../types/inputRowTypes"
 import { ThemeProps } from "../../types/primitivTypes"
+import { IconType } from "../Icon/IconType"
 
 export interface ExtendableTextBoxProps extends ThemeProps {
     defaultRowCount: number
     minRowCount: number
     maxRowCount: number
-    icon: iconType
+    icon: IconType
     placeholderText1: string
     placeholderText2: string
     pickerItems?: PickerRow[]

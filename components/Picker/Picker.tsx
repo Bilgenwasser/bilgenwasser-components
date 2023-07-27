@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { Text, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { iconType } from "../../types/iconType"
 import { optionalString, StyledColorProps } from "../../types/primitivTypes"
 import { useViewCenter } from "../../utils/hooks/useView"
 import { universalColors } from "../../utils/theming/colors"
-import { PickerProps } from "./Picker.types"
-import { PickerModal } from "./PickerModal"
 import Box from "../Box/Box"
 import Icon from "../Icon/Icon"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import HStack from "../Stacks/HStack"
+import { PickerProps } from "./Picker.types"
+import { PickerModal } from "./PickerModal"
+import { IconType } from "../Icon/IconType"
 
 const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }: PickerProps) => {
     const [isPickerVisible, setIsPickerVisible] = useState<boolean>(false)
     const [pickerItem, setPickerText] = useState<optionalString>(value ? value.text : null)
-    const [pickerIcon, setPickerIcon] = useState<iconType | null>(value ? value.icon : null)
+    const [pickerIcon, setPickerIcon] = useState<IconType | null>(value ? value.icon : null)
 
     const viewRef = useRef<TouchableOpacity>(null)
     const [pickerPosition, setPickerPosition] = useState({ x: 150, y: 200 })

@@ -1,6 +1,6 @@
 import { KeyboardType } from "react-native"
-import { iconType } from "./iconType"
 import { pickerType } from "./primitivTypes"
+import { IconType } from "../components/Icon/IconType"
 
 export interface ToggleRow {
     text: string
@@ -10,11 +10,11 @@ export interface ToggleRow {
 
 export interface PickerRow {
     text: string
-    icon: iconType
+    icon: IconType
 }
 
 export interface TextBoxRowProps {
-    icon: iconType
+    icon: IconType
     name: string
     placeholderText: string
     keyboardType?: KeyboardType

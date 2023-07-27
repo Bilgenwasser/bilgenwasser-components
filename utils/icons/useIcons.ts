@@ -1,5 +1,5 @@
 import { ImageSourcePropType, useColorScheme } from "react-native"
-import { iconType } from "../../types/iconType"
+import iconType from "../../components/Icon/IconType"
 import { themeType } from "../../types/primitivTypes"
 import { iconsDark } from "./iconsDark"
 import { iconsLight } from "./iconsLight"

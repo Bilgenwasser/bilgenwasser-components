@@ -1,5 +1,5 @@
 import { ImageSourcePropType } from "react-native"
-import { iconType } from "../../types/iconType"
+import iconType from "../../components/Icon/IconType"
 
 export const iconsDark: { [key in iconType]: ImageSourcePropType } = {
     arrow: require("../../assets/icons/darkmode/up-480.png"),

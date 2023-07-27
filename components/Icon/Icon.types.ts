@@ -1,8 +1,8 @@
-import { iconType } from "../../types/iconType"
 import { ThemeProps } from "../../types/primitivTypes"
+import { IconType } from "./IconType"
 
 export interface IconProps extends ThemeProps {
-    name: iconType
+    name: IconType
     size?: number
     rotation?: number
 }
