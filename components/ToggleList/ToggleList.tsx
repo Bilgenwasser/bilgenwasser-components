@@ -1,16 +1,16 @@
 import { useEffect } from "react"
 import { FlatList, Switch, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { useModalSheet } from "../../shared/useModalSheet"
-import { useToggles } from "../../utils/hooks/useToggles"
-import { universalColors } from "../../utils/theming/colors"
+import { universalColors } from "../../shared/colors"
 import Heading from "../Heading/Heading"
 import Icon from "../Icon/Icon"
 import ModalSheet from "../ModalSheet/ModalSheet"
+import { useModalSheet } from "../ModalSheet/useModalSheet"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import HStack from "../Stacks/HStack"
 import VStack from "../Stacks/VStack"
 import { ToggleListProps } from "./ToggleList.types"
+import { useToggles } from "./useToggles"
 
 const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
     const { isEnabled, toggleSwitch } = useToggles(inputRows)

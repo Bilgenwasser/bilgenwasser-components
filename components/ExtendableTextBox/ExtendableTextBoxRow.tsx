@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { View } from "react-native"
 import styled from "styled-components"
-import { optionalString, pickerType } from "../../types/primitivTypes"
-import { TextBoxProps } from "./ExtendableTextBoxRow.types"
+import { optionalString, pickerType } from "../../shared/primitivTypes"
 import Icon from "../Icon/Icon"
 import InputField from "../InputField/InputField"
 import Picker from "../Picker/Picker"
 import HStack from "../Stacks/HStack"
+import { TextBoxProps } from "./ExtendableTextBoxRow.types"
 
 export const ExtendableTextBoxRow = ({
     icon,

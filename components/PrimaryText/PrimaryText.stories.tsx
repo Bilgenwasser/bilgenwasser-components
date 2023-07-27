@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import PrimaryText from "./PrimaryText"
+import { View } from "react-native"
+import ViewContainer from "../ViewContainer/ViewContainer"
 
 const PrimaryTextMeta: ComponentMeta<typeof PrimaryText> = {
     title: "PrimaryText",
@@ -32,4 +34,10 @@ export default PrimaryTextMeta
 
 type PrimaryTextStory = ComponentStory<typeof PrimaryText>
 
-export const Default: PrimaryTextStory = (args) => <PrimaryText {...args}>{args.children}</PrimaryText>
+export const Default: PrimaryTextStory = (args) => (
+    <ViewContainer>
+        <View style={{ justifyContent: "center", height: "100%" }}>
+            <PrimaryText {...args}>{args.children}</PrimaryText>
+        </View>
+    </ViewContainer>
+)

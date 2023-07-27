@@ -1,8 +1,8 @@
 import { TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { universalColors } from "../../utils/theming/colors"
-import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
+import { universalColors } from "../../shared/colors"
 import Heading from "../Heading/Heading"
+import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
 
 const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
     return (

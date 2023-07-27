@@ -1,4 +1,4 @@
-import { ThemeProps } from "../../types/primitivTypes"
+import { ThemeProps } from "../../shared/primitivTypes"
 import { IconType } from "../Icon/IconType"
 
 export interface ExtendableTextBoxControlButtonProps extends ThemeProps {

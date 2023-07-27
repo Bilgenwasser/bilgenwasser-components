@@ -1,5 +1,5 @@
-import { TextBoxRowProps } from "../../types/inputRowTypes"
-import { textBoxStateType, ThemeProps } from "../../types/primitivTypes"
+import { textBoxStateType, ThemeProps } from "../../shared/primitivTypes"
+import { TextBoxRowProps } from "./TextBoxRowProps"
 
 export interface TextBoxProps extends ThemeProps {
     inputRows: TextBoxRowProps[]

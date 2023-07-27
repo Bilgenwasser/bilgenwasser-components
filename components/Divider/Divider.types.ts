@@ -1,4 +1,4 @@
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
 
 export interface DividerProps extends ThemeProps {
     thickness?: "bold" | "thin"

@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { StyledColorProps } from "../../types/primitivTypes"
-import { darkColors, lightColors } from "../../utils/theming/colors"
-import { getTheme } from "../../utils/theming/getTheme"
+import { darkColors, lightColors } from "../../shared/colors"
+import { StyledColorProps } from "../../shared/primitivTypes"
+import HStack from "../Stacks/HStack"
 import { ExtendableTextBoxControlButton } from "./ExtendableTextBoxControlButton"
 import { ExtendableTextBoxControlsProps } from "./ExtendableTextBoxControls.types"
-import HStack from "../Stacks/HStack"
+import { getTheme } from "../../shared/getTheme"
 
 export const ExtendableTextBoxControls = ({
     minRowCount,

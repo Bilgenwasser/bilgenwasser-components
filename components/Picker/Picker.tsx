@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { Text, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { optionalString, StyledColorProps } from "../../types/primitivTypes"
-import { useViewCenter } from "../../utils/hooks/useView"
-import { universalColors } from "../../utils/theming/colors"
+import { universalColors } from "../../shared/colors"
+import { optionalString, StyledColorProps } from "../../shared/primitivTypes"
 import Box from "../Box/Box"
 import Icon from "../Icon/Icon"
+import { IconType } from "../Icon/IconType"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import HStack from "../Stacks/HStack"
 import { PickerProps } from "./Picker.types"
 import { PickerModal } from "./PickerModal"
-import { IconType } from "../Icon/IconType"
+import { useViewCenter } from "./useView"
 
 const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }: PickerProps) => {
     const [isPickerVisible, setIsPickerVisible] = useState<boolean>(false)

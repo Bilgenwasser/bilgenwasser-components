@@ -1,14 +1,14 @@
 import { useRef, useState } from "react"
 import { Modal, Pressable, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { useScreenDimensions, useViewDimensions } from "../../utils/hooks/useView"
-import { ModalViewProps, PickerModalProps } from "./PickerModal.types"
 import Box from "../Box/Box"
 import Divider from "../Divider/Divider"
 import Icon from "../Icon/Icon"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import HStack from "../Stacks/HStack"
 import VStack from "../Stacks/VStack"
+import { ModalViewProps, PickerModalProps } from "./PickerModal.types"
+import { useScreenDimensions, useViewDimensions } from "./useView"
 
 export const PickerModal = ({
     options,

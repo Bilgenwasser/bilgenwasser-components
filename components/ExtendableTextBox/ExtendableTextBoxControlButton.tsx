@@ -1,10 +1,10 @@
 import { TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps } from "../../types/primitivTypes"
-import { universalColors } from "../../utils/theming/colors"
-import { getTheme } from "../../utils/theming/getTheme"
-import { ExtendableTextBoxControlButtonProps } from "./ExtendableTextBoxControlButton.types"
+import { universalColors } from "../../shared/colors"
+import { StyledColorProps } from "../../shared/primitivTypes"
 import Icon from "../Icon/Icon"
+import { ExtendableTextBoxControlButtonProps } from "./ExtendableTextBoxControlButton.types"
+import { getTheme } from "../../shared/getTheme"
 
 export const ExtendableTextBoxControlButton = ({
     icon,

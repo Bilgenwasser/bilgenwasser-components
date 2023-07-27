@@ -1,6 +1,6 @@
-import { ToggleRow } from "../../types/inputRowTypes"
+import { ToggleRowProps } from "./ToggleRowProps"
 
 export interface ToggleListProps {
-    inputRows: ToggleRow[]
+    inputRows: ToggleRowProps[]
     setValues?: (values: boolean[]) => void
 }

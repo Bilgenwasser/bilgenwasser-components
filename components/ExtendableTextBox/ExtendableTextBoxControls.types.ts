@@ -1,4 +1,4 @@
-import { ThemeProps } from "../../types/primitivTypes"
+import { ThemeProps } from "../../shared/primitivTypes"
 
 export interface ExtendableTextBoxControlsProps extends ThemeProps {
     minRowCount: number

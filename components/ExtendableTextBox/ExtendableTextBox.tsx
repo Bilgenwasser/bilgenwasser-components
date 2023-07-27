@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react"
-import { ExtendableRowStateType } from "../../types/ExtendableTextBoxTypes"
-import { ExtendableTextBoxProps } from "./ExtendableTextBox.types"
-import { ExtendableTextBoxControls } from "./ExtendableTextBoxControls"
-import { ExtendableTextBoxRow } from "./ExtendableTextBoxRow"
 import Box from "../Box/Box"
 import HStack from "../Stacks/HStack"
 import VStack from "../Stacks/VStack"
+import { ExtendableTextBoxProps } from "./ExtendableTextBox.types"
+import { ExtendableTextBoxControls } from "./ExtendableTextBoxControls"
+import { ExtendableTextBoxRow } from "./ExtendableTextBoxRow"
+import { ExtendableRowStateType } from "./ExtendableTextBoxTypes"
 
 const ExtendableTextBox = ({
     defaultRowCount,

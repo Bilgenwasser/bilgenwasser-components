@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import Heading from "./Heading"
+import { View } from "react-native"
+import ViewContainer from "../ViewContainer/ViewContainer"
 
 const HeadingMeta: ComponentMeta<typeof Heading> = {
     title: "Heading",
@@ -42,4 +44,10 @@ export default HeadingMeta
 
 type HeadingStory = ComponentStory<typeof Heading>
 
-export const Default: HeadingStory = (args) => <Heading {...args}>{args.children}</Heading>
+export const Default: HeadingStory = (args) => (
+    <ViewContainer>
+        <View style={{ justifyContent: "center", height: "100%" }}>
+            <Heading {...args}>{args.children}</Heading>
+        </View>
+    </ViewContainer>
+)

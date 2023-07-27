@@ -1,7 +1,7 @@
 import { useColorScheme } from "react-native"
-import { themeType } from "../../types/primitivTypes"
+import { ThemeType } from "./primitivTypes"
 
-export function getTheme(forceTheme: themeType, colorsDark: string, colorsLight: string): string {
+export function getTheme(forceTheme: ThemeType, colorsDark: string, colorsLight: string): string {
     const appearance = useColorScheme()
 
     if (forceTheme) {

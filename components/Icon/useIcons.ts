@@ -1,10 +1,10 @@
 import { ImageSourcePropType, useColorScheme } from "react-native"
-import iconType from "../../components/Icon/IconType"
-import { themeType } from "../../types/primitivTypes"
+import { ThemeType } from "../../shared/primitivTypes"
 import { iconsDark } from "./iconsDark"
 import { iconsLight } from "./iconsLight"
+import { IconType } from "./IconType"
 
-export const useIcons = (forceTheme: themeType): { [key in iconType]: ImageSourcePropType } => {
+export const useIcons = (forceTheme: ThemeType): { [key in IconType]: ImageSourcePropType } => {
     const appearance = useColorScheme()
 
     if (forceTheme) {

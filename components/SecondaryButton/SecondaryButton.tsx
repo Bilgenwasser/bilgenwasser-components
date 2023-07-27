@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps } from "../../types/primitivTypes"
+import { StyledColorProps } from "../../shared/primitivTypes"
 import { SecondaryButtonProps } from "./SecondaryButton.types"
 
 const SecondaryButton = ({ children: text, color, onPress }: SecondaryButtonProps) => {

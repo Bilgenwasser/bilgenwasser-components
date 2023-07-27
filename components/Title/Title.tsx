@@ -1,8 +1,8 @@
 import { Text } from "react-native"
 import styled from "styled-components"
-import { universalColors } from "../../utils/theming/colors"
-import { getTheme } from "../../utils/theming/getTheme"
+import { universalColors } from "../../shared/colors"
 import { StyledTextProps, TitleProps } from "./Title.types"
+import { getTheme } from "../../shared/getTheme"
 
 const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) => {
     return (

@@ -1,6 +1,6 @@
 import { Text } from "react-native"
 import styled from "styled-components"
-import { universalColors } from "../../utils/theming/colors"
+import { universalColors } from "../../shared/colors"
 import { SecondaryTextProps } from "./SecondaryText.types"
 
 const SecondaryText = ({ children: text }: SecondaryTextProps) => {

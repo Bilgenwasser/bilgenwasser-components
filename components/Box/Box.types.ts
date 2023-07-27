@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
 
 export interface BoxProps extends ThemeProps {
     children?: ReactNode

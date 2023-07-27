@@ -1,4 +1,4 @@
-import { ThemeProps } from "../../types/primitivTypes"
+import { ThemeProps } from "../../shared/primitivTypes"
 import { IconType } from "./IconType"
 
 export interface IconProps extends ThemeProps {

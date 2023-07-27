@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { ThemeProps } from "../../types/primitivTypes"
+import { ThemeProps } from "../../shared/primitivTypes"
 
 export interface ViewContainerProps extends ThemeProps {
     children?: ReactNode

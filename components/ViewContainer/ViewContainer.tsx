@@ -1,9 +1,9 @@
 import { SafeAreaView, View } from "react-native"
 import styled from "styled-components"
-import { StyledColorProps } from "../../types/primitivTypes"
-import { lightColors, universalColors } from "../../utils/theming/colors"
-import { getTheme } from "../../utils/theming/getTheme"
+import { lightColors, universalColors } from "../../shared/colors"
+import { StyledColorProps } from "../../shared/primitivTypes"
 import { ContainerProps, ViewContainerProps } from "./ViewContainer.types"
+import { getTheme } from "../../shared/getTheme"
 
 const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: ViewContainerProps) => {
     return (

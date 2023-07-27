@@ -1,4 +1,4 @@
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
 
 export interface TitleProps extends ThemeProps {
     children: string | string[]

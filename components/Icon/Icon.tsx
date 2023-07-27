@@ -1,7 +1,7 @@
 import { Image } from "react-native"
 import styled from "styled-components"
-import { useIcons } from "../../utils/icons/useIcons"
 import { IconProps, StyledImageProps } from "./Icon.types"
+import { useIcons } from "./useIcons"
 
 const Icon = ({ name, size, rotation, forceTheme }: IconProps) => {
     const icons = useIcons(forceTheme)

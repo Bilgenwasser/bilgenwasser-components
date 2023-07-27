@@ -1,5 +1,5 @@
 import { KeyboardType } from "react-native"
-import { StyledColorProps, ThemeProps } from "../../types/primitivTypes"
+import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
 
 export interface InputFieldProps extends ThemeProps {
     value?: string

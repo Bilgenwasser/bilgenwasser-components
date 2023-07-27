@@ -1,8 +1,8 @@
 import { View } from "react-native"
 import styled from "styled-components"
-import { darkColors, lightColors } from "../../utils/theming/colors"
-import { getTheme } from "../../utils/theming/getTheme"
+import { darkColors, lightColors } from "../../shared/colors"
 import { DividerProps, StyledViewProps } from "./Divider.types"
+import { getTheme } from "../../shared/getTheme"
 
 const Divider = ({ thickness, forceTheme }: DividerProps) => {
     const thinColors = getTheme(forceTheme, darkColors.SystemGray3, lightColors.SystemGray4)

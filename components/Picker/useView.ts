@@ -1,6 +1,6 @@
 import { RefObject } from "react"
 import { Dimensions, TouchableOpacity } from "react-native"
-import { dimensionType, positionType } from "../../types/primitivTypes"
+import { dimensionType, positionType } from "../../shared/primitivTypes"
 
 export function useViewCenter(
     viewRef: RefObject<TouchableOpacity>,

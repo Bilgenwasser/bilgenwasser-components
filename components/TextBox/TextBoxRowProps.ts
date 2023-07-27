@@ -1,17 +1,7 @@
 import { KeyboardType } from "react-native"
-import { pickerType } from "./primitivTypes"
-import { IconType } from "../components/Icon/IconType"
-
-export interface ToggleRow {
-    text: string
-    info?: string[]
-    default?: boolean
-}
-
-export interface PickerRow {
-    text: string
-    icon: IconType
-}
+import { IconType } from "../Icon/IconType"
+import { pickerType } from "../../shared/primitivTypes"
+import { PickerRowProps } from "../Picker/PickerRowProps"
 
 export interface TextBoxRowProps {
     icon: IconType
@@ -22,7 +12,7 @@ export interface TextBoxRowProps {
     maxLength?: number
     divider?: "bold" | "thin"
     editable?: boolean
-    picker?: PickerRow[]
+    picker?: PickerRowProps[]
     hideText?: boolean
     value: string | pickerType
 }
