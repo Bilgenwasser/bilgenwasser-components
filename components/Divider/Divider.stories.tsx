@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import { Box } from "../Box/Box"
-import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { Divider } from "./Divider"
+import Box from "../Box/Box"
+import Divider from "./Divider"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import PrimaryText from "../PrimaryText/PrimaryText"
 
 const DividerMeta: ComponentMeta<typeof Divider> = {
     title: "Divider",

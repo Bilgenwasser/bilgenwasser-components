@@ -1,11 +1,12 @@
 import { Text, TouchableOpacity } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../utils/theming/colors"
-import { Icon } from "../Icon/Icon"
-import { HStack } from "../Stacks/HStack"
 import { BackNavigationProps } from "./BackNavigation.types"
+import React from "react"
+import Icon from "../Icon/Icon"
+import HStack from "../Stacks/HStack"
 
-export const BackNavigation = ({ navigation, text, toggleBoolean, setToggleBoolean }: BackNavigationProps) => {
+const BackNavigation = ({ navigation, text, toggleBoolean, setToggleBoolean }: BackNavigationProps) => {
     return (
         <LeftAlignedHStack>
             <TouchableOpacity
@@ -19,6 +20,8 @@ export const BackNavigation = ({ navigation, text, toggleBoolean, setToggleBoole
         </LeftAlignedHStack>
     )
 }
+
+export default BackNavigation
 
 const LeftAlignedHStack = styled(HStack)`
     width: 100%;

@@ -4,7 +4,7 @@ import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import { InputFieldProps, StyledTextInputProps } from "./InputField.types"
 
-export const InputField = ({
+const InputField = ({
     value,
     setValue,
     editable,
@@ -32,6 +32,8 @@ export const InputField = ({
         ></StyledTextInput>
     )
 }
+
+export default InputField
 
 const StyledTextInput = styled(TextInput)<StyledTextInputProps>`
     ${({ endText }) => !endText && "width: 100%;"}

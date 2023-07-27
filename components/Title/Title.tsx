@@ -4,7 +4,7 @@ import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import { StyledTextProps, TitleProps } from "./Title.types"
 
-export const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) => {
+const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) => {
     return (
         <StyledText
             color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
@@ -14,6 +14,8 @@ export const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) =
         </StyledText>
     )
 }
+
+export default Title
 
 const StyledText = styled(Text)<StyledTextProps>`
     font-size: 36px;

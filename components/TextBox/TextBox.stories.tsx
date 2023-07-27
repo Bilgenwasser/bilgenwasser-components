@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React, { useState } from "react"
 import { View } from "react-native"
 import { textBoxStateType } from "../../types/primitivTypes"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { TextBox } from "./TextBox"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import TextBox from "./TextBox"
 
 const TextBoxMeta: ComponentMeta<typeof TextBox> = {
     title: "TextBox",

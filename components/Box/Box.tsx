@@ -4,7 +4,7 @@ import { darkColors, lightColors, universalColors } from "../../utils/theming/co
 import { getTheme } from "../../utils/theming/getTheme"
 import { BoxProps, StyledViewProps } from "./Box.types"
 
-export const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxProps) => {
+const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxProps) => {
     return (
         <StyledView
             color={getTheme(
@@ -19,6 +19,8 @@ export const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxP
         </StyledView>
     )
 }
+
+export default Box
 
 const StyledView = styled(View)<StyledViewProps>`
     background: ${({ color, transparent }) => (transparent ? color + "dd" : color)};

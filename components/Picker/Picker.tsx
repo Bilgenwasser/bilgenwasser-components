@@ -5,14 +5,14 @@ import { iconType } from "../../types/iconType"
 import { optionalString, StyledColorProps } from "../../types/primitivTypes"
 import { useViewCenter } from "../../utils/hooks/useView"
 import { universalColors } from "../../utils/theming/colors"
-import { Box } from "../Box/Box"
-import { Icon } from "../Icon/Icon"
-import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { HStack } from "../Stacks/HStack"
 import { PickerProps } from "./Picker.types"
 import { PickerModal } from "./PickerModal"
+import Box from "../Box/Box"
+import Icon from "../Icon/Icon"
+import PrimaryText from "../PrimaryText/PrimaryText"
+import HStack from "../Stacks/HStack"
 
-export const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }: PickerProps) => {
+const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }: PickerProps) => {
     const [isPickerVisible, setIsPickerVisible] = useState<boolean>(false)
     const [pickerItem, setPickerText] = useState<optionalString>(value ? value.text : null)
     const [pickerIcon, setPickerIcon] = useState<iconType | null>(value ? value.icon : null)
@@ -68,6 +68,8 @@ export const Picker = ({ placeholderText, options, value, setValue, sheet, force
         </TouchableOpacity>
     )
 }
+
+export default Picker
 
 const StyledHStack = styled(HStack)`
     padding: 5px 15px;

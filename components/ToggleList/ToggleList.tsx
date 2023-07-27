@@ -4,15 +4,15 @@ import styled from "styled-components"
 import { useModalSheet } from "../../shared/useModalSheet"
 import { useToggles } from "../../utils/hooks/useToggles"
 import { universalColors } from "../../utils/theming/colors"
-import { Heading } from "../Heading/Heading"
-import { Icon } from "../Icon/Icon"
-import { ModalSheet } from "../ModalSheet/ModalSheet"
-import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { HStack } from "../Stacks/HStack"
-import { VStack } from "../Stacks/VStack"
+import Heading from "../Heading/Heading"
+import Icon from "../Icon/Icon"
+import ModalSheet from "../ModalSheet/ModalSheet"
+import PrimaryText from "../PrimaryText/PrimaryText"
+import HStack from "../Stacks/HStack"
+import VStack from "../Stacks/VStack"
 import { ToggleListProps } from "./ToggleList.types"
 
-export const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
+const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
     const { isEnabled, toggleSwitch } = useToggles(inputRows)
 
     useEffect(() => {
@@ -74,6 +74,8 @@ export const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
         </PaddedVStack>
     )
 }
+
+export default ToggleList
 
 const SpacedHStack = styled(HStack)`
     width: 100%;

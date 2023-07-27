@@ -4,7 +4,7 @@ import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import { HeadingProps, StyledTextProps } from "./Heading.types"
 
-export const Heading = ({ children: text, noMargin, alignCenter, forceColor, forceTheme }: HeadingProps) => {
+const Heading = ({ children: text, noMargin, alignCenter, forceColor, forceTheme }: HeadingProps) => {
     return (
         <StyledText
             color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
@@ -16,6 +16,8 @@ export const Heading = ({ children: text, noMargin, alignCenter, forceColor, for
         </StyledText>
     )
 }
+
+export default Heading
 
 const StyledText = styled(Text)<StyledTextProps>`
     font-size: 24px;

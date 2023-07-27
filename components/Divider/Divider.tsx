@@ -4,12 +4,14 @@ import { darkColors, lightColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import { DividerProps, StyledViewProps } from "./Divider.types"
 
-export const Divider = ({ thickness, forceTheme }: DividerProps) => {
+const Divider = ({ thickness, forceTheme }: DividerProps) => {
     const thinColors = getTheme(forceTheme, darkColors.SystemGray3, lightColors.SystemGray4)
     const boldColors = getTheme(forceTheme, darkColors.SystemGray2, lightColors.SystemGray3)
 
     return <StyledView color={thickness === "bold" ? boldColors : thinColors} thickness={thickness} />
 }
+
+export default Divider
 
 const StyledView = styled(View)<StyledViewProps>`
     width: 92%;

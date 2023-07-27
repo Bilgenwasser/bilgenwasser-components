@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { DatePicker } from "./DatePicker"
+import DatePicker from "./DatePicker"
+import ViewContainer from "../ViewContainer/ViewContainer"
 
 const DatePickerMeta: ComponentMeta<typeof DatePicker> = {
     title: "DatePicker",

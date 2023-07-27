@@ -1,10 +1,10 @@
 import { TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../utils/theming/colors"
-import { Heading } from "../Heading/Heading"
 import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
+import Heading from "../Heading/Heading"
 
-export const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
+const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
     return (
         <StyledTouchableOpacity onPress={onPress} disabled={disabled}>
             <Background disabled={!!disabled} smallMargin={!!smallMargin}>
@@ -15,6 +15,8 @@ export const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }
         </StyledTouchableOpacity>
     )
 }
+
+export default PrimaryButton
 
 const StyledTouchableOpacity = styled(TouchableOpacity)`
     width: 100%;

@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { Icon } from "./Icon"
 import { IconOptions } from "./IconOptions"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import Icon from "./Icon"
 
 const IconMeta: ComponentMeta<typeof Icon> = {
     title: "Icon",

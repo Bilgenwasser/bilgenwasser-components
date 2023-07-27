@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from "react"
 import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, ScrollView, useColorScheme, View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../utils/theming/colors"
-import { HStack } from "../Stacks/HStack"
 import { DotProps, ImageContainerProps, PaginationProps, SpacerProps } from "./Pagination.types"
+import HStack from "../Stacks/HStack"
 
-export const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
+const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
     const [currentPage, setCurrentPage] = useState<number>(0)
     const [dotsColor, setDotsColor] = useState<string[]>(Array(20).fill(universalColors.SystemGray))
     const appearance = useColorScheme()
@@ -64,6 +64,8 @@ export const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps
         </ScrollViewContainer>
     )
 }
+
+export default Pagination
 
 const ScrollViewContainer = styled(View)`
     flex: 1;

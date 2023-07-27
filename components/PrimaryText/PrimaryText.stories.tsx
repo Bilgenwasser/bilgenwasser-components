@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
-import { PrimaryText } from "./PrimaryText"
+import PrimaryText from "./PrimaryText"
 
 const PrimaryTextMeta: ComponentMeta<typeof PrimaryText> = {
     title: "PrimaryText",

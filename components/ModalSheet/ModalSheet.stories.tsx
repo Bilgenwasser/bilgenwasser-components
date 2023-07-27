@@ -2,10 +2,10 @@ import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
 import { useModalSheet } from "../../shared/useModalSheet"
-import { Heading } from "../Heading/Heading"
-import { PrimaryButton } from "../PrimaryButton/PrimaryButton"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { ModalSheet } from "./ModalSheet"
+import Heading from "../Heading/Heading"
+import PrimaryButton from "../PrimaryButton/PrimaryButton"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import ModalSheet from "./ModalSheet"
 
 const ModalSheetMeta: ComponentMeta<typeof ModalSheet> = {
     title: "ModalSheet",

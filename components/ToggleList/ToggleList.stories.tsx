@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React, { useState } from "react"
 import { View } from "react-native"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { ToggleList } from "./ToggleList"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import ToggleList from "./ToggleList"
 
 const ToggleListMeta: ComponentMeta<typeof ToggleList> = {
     title: "ToggleList",

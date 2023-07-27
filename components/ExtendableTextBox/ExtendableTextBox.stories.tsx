@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
 import { IconOptions } from "../Icon/IconOptions"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { ExtendableTextBox } from "./ExtendableTextBox"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import ExtendableTextBox from "./ExtendableTextBox"
 
 const ExtendableTextBoxMeta: ComponentMeta<typeof ExtendableTextBox> = {
     title: "ExtendableTextBox",

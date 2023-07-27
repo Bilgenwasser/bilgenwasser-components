@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react-native"
 import React from "react"
 import { View } from "react-native"
-import { ViewContainer } from "../ViewContainer/ViewContainer"
-import { InputField } from "./InputField"
+import ViewContainer from "../ViewContainer/ViewContainer"
+import InputField from "./InputField"
 
 const InputFieldMeta: ComponentMeta<typeof InputField> = {
     title: "InputField",

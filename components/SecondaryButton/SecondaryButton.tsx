@@ -3,13 +3,15 @@ import styled from "styled-components"
 import { StyledColorProps } from "../../types/primitivTypes"
 import { SecondaryButtonProps } from "./SecondaryButton.types"
 
-export const SecondaryButton = ({ children: text, color, onPress }: SecondaryButtonProps) => {
+const SecondaryButton = ({ children: text, color, onPress }: SecondaryButtonProps) => {
     return (
         <TouchableOpacity onPress={onPress}>
             <StyledText color={color}>{text}</StyledText>
         </TouchableOpacity>
     )
 }
+
+export default SecondaryButton
 
 const StyledText = styled(Text)<StyledColorProps>`
     color: ${({ color }) => color};

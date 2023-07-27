@@ -3,11 +3,11 @@ import { format } from "date-fns"
 import { useState } from "react"
 import { Platform, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
-import { Box } from "../Box/Box"
-import { PrimaryText } from "../PrimaryText/PrimaryText"
+import Box from "../Box/Box"
 import { DatePickerProps } from "./DatePicker.types"
+import PrimaryText from "../PrimaryText/PrimaryText"
 
-export const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps) => {
+const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps) => {
     const [showPicker, setShowPicker] = useState(false)
     const locale = "de-DE"
 
@@ -47,6 +47,8 @@ export const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps)
         )
     }
 }
+
+export default DatePicker
 
 const StyledView = styled(View)`
     padding: 3px;

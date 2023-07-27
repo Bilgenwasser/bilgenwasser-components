@@ -1,17 +1,17 @@
 import { View } from "react-native"
 import styled from "styled-components"
 import { pickerType } from "../../types/primitivTypes"
-import { Box } from "../Box/Box"
-import { Divider } from "../Divider/Divider"
-import { Icon } from "../Icon/Icon"
-import { InputField } from "../InputField/InputField"
-import { Picker } from "../Picker/Picker"
-import { PrimaryText } from "../PrimaryText/PrimaryText"
-import { HStack } from "../Stacks/HStack"
-import { VStack } from "../Stacks/VStack"
 import { InputContainerProps, TextBoxProps } from "./TextBox.types"
+import Box from "../Box/Box"
+import Divider from "../Divider/Divider"
+import Icon from "../Icon/Icon"
+import InputField from "../InputField/InputField"
+import Picker from "../Picker/Picker"
+import PrimaryText from "../PrimaryText/PrimaryText"
+import HStack from "../Stacks/HStack"
+import VStack from "../Stacks/VStack"
 
-export const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: TextBoxProps) => {
+const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: TextBoxProps) => {
     return (
         <Box sheet={sheet} forceTheme={forceTheme}>
             {inputRows.map((row, index) => {
@@ -81,6 +81,8 @@ export const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, she
         </Box>
     )
 }
+
+export default TextBox
 
 const SpacedHStack = styled(HStack)`
     justify-content: space-between;

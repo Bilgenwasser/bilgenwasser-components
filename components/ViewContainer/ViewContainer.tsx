@@ -5,7 +5,7 @@ import { lightColors, universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
 import { ContainerProps, ViewContainerProps } from "./ViewContainer.types"
 
-export const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: ViewContainerProps) => {
+const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: ViewContainerProps) => {
     return (
         <StyledView color={getTheme(forceTheme, universalColors.SystemBlack, lightColors.SystemGray6)}>
             <Container noPadding={!!noPadding} noAlignment={!!noAlignment}>
@@ -14,6 +14,8 @@ export const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: 
         </StyledView>
     )
 }
+
+export default ViewContainer
 
 const StyledView = styled(SafeAreaView)<StyledColorProps>`
     background: ${({ color }) => color};

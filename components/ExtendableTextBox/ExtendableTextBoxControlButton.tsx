@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { StyledColorProps } from "../../types/primitivTypes"
 import { universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-import { Icon } from "../Icon/Icon"
 import { ExtendableTextBoxControlButtonProps } from "./ExtendableTextBoxControlButton.types"
+import Icon from "../Icon/Icon"
 
 export const ExtendableTextBoxControlButton = ({
     icon,

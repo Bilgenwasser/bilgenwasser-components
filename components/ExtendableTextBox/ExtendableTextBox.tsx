@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react"
 import { ExtendableRowStateType } from "../../types/ExtendableTextBoxTypes"
-import { Box } from "../Box/Box"
-import { HStack } from "../Stacks/HStack"
-import { VStack } from "../Stacks/VStack"
 import { ExtendableTextBoxProps } from "./ExtendableTextBox.types"
 import { ExtendableTextBoxControls } from "./ExtendableTextBoxControls"
 import { ExtendableTextBoxRow } from "./ExtendableTextBoxRow"
+import Box from "../Box/Box"
+import HStack from "../Stacks/HStack"
+import VStack from "../Stacks/VStack"
 
-export const ExtendableTextBox = ({
+const ExtendableTextBox = ({
     defaultRowCount,
     minRowCount,
     maxRowCount,
@@ -69,3 +69,5 @@ export const ExtendableTextBox = ({
         </Box>
     )
 }
+
+export default ExtendableTextBox

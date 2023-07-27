@@ -4,10 +4,10 @@ import { Modal, Platform, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../utils/theming/colors"
 import { getTheme } from "../../utils/theming/getTheme"
-import { Icon } from "../Icon/Icon"
 import { ModalSheetProps } from "./ModalSheet.types"
+import Icon from "../Icon/Icon"
 
-export const ModalSheet = ({
+const ModalSheet = ({
     children,
     snapPoints,
     isSheetVisible,
@@ -43,6 +43,8 @@ export const ModalSheet = ({
         </Modal>
     )
 }
+
+export default ModalSheet
 
 const ModalView = styled(View)`
     flex: 1;
