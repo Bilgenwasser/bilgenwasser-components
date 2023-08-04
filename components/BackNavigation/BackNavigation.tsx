@@ -1,8 +1,8 @@
 import React from "react"
 import { StyleSheet, Text, TouchableOpacity } from "react-native"
 import { universalColors } from "../../shared/colors"
+import HStack from "../HStack/HStack"
 import Icon from "../Icon/Icon"
-import HStack from "../Stacks/HStack"
 import { BackNavigationProps } from "./BackNavigation.types"
 
 const BackNavigation = ({ navigation, text, toggleBoolean, setToggleBoolean }: BackNavigationProps) => {

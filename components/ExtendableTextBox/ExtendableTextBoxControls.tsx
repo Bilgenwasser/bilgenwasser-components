@@ -2,7 +2,7 @@ import React from "react"
 import { StyleSheet } from "react-native"
 import { darkColors, lightColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
-import HStack from "../Stacks/HStack"
+import HStack from "../HStack/HStack"
 import { ExtendableTextBoxControlButton } from "./ExtendableTextBoxControlButton"
 import { ExtendableTextBoxControlsProps } from "./ExtendableTextBoxControls.types"
 

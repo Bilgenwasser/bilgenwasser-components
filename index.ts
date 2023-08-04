@@ -1,21 +1,21 @@
-export {default as BackNavigation} from './components/BackNavigation/BackNavigation'
-export {default as Box} from './components/Box/Box'
+export { default as BackNavigation } from "./components/BackNavigation/BackNavigation"
+export { default as Box } from "./components/Box/Box"
 // export {default as DatePicker} from './components/DatePicker/DatePicker'
-export {default as Divider} from './components/Divider/Divider'
-export {default as ExtendableTextBox} from './components/ExtendableTextBox/ExtendableTextBox'
-export {default as Heading} from './components/Heading/Heading'
-export {default as Icon} from './components/Icon/Icon'
-export {default as InputField} from './components/InputField/InputField'
-export {default as ModalSheet} from './components/ModalSheet/ModalSheet'
-export {default as Pagination} from './components/Pagination/Pagination'
-export {default as Picker} from './components/Picker/Picker'
-export {default as PrimaryButton} from './components/PrimaryButton/PrimaryButton'
-export {default as PrimaryText} from './components/PrimaryText/PrimaryText'
-export {default as SecondaryButton} from './components/SecondaryButton/SecondaryButton'
-export {default as SecondaryText} from './components/SecondaryText/SecondaryText'
-export {default as HStack} from './components/Stacks/HStack'
-export {default as VStack} from './components/Stacks/VStack'
-export {default as TextBox} from './components/TextBox/TextBox'
-export {default as Title} from './components/Title/Title'
-export {default as ToggleList} from './components/ToggleList/ToggleList'
-export {default as ViewContainer} from './components/ViewContainer/ViewContainer'
+export { default as Divider } from "./components/Divider/Divider"
+export { default as ExtendableTextBox } from "./components/ExtendableTextBox/ExtendableTextBox"
+export { default as Heading } from "./components/Heading/Heading"
+export { default as HStack } from "./components/HStack/HStack"
+export { default as Icon } from "./components/Icon/Icon"
+export { default as InputField } from "./components/InputField/InputField"
+export { default as ModalSheet } from "./components/ModalSheet/ModalSheet"
+export { default as Pagination } from "./components/Pagination/Pagination"
+export { default as Picker } from "./components/Picker/Picker"
+export { default as PrimaryButton } from "./components/PrimaryButton/PrimaryButton"
+export { default as PrimaryText } from "./components/PrimaryText/PrimaryText"
+export { default as SecondaryButton } from "./components/SecondaryButton/SecondaryButton"
+export { default as SecondaryText } from "./components/SecondaryText/SecondaryText"
+export { default as TextBox } from "./components/TextBox/TextBox"
+export { default as Title } from "./components/Title/Title"
+export { default as ToggleList } from "./components/ToggleList/ToggleList"
+export { default as ViewContainer } from "./components/ViewContainer/ViewContainer"
+export { default as VStack } from "./components/VStack/VStack"

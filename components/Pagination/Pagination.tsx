@@ -9,7 +9,7 @@ import {
     View,
 } from "react-native"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
-import HStack from "../Stacks/HStack"
+import HStack from "../HStack/HStack"
 import { PaginationProps } from "./Pagination.types"
 
 const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
