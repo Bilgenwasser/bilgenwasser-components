@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import { Text, TouchableOpacity } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"

@@ -1,8 +1,9 @@
+import React from "react"
 import { Text } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"
-import { HeadingProps, StyledTextProps } from "./Heading.types"
 import { getTheme } from "../../shared/getTheme"
+import { HeadingProps, StyledTextProps } from "./Heading.types"
 
 const Heading = ({ children: text, noMargin, alignCenter, forceColor, forceTheme }: HeadingProps) => {
     return (

@@ -1,3 +1,4 @@
+import React from "react"
 import { TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"

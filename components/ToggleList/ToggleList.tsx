@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 import { FlatList, Switch, TouchableOpacity } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"

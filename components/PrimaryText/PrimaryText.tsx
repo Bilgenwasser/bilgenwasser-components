@@ -1,8 +1,9 @@
+import React from "react"
 import { Text } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"
-import { PrimaryTextProps, StyledTextProps } from "./PrimaryText.types"
 import { getTheme } from "../../shared/getTheme"
+import { PrimaryTextProps, StyledTextProps } from "./PrimaryText.types"
 
 const PrimaryText = ({ children: text, forceColor, forceTheme }: PrimaryTextProps) => {
     return (

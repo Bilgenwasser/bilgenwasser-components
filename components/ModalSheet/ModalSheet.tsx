@@ -1,11 +1,11 @@
 import BottomSheet from "@gorhom/bottom-sheet"
-import { useRef } from "react"
+import React, { useRef } from "react"
 import { Modal, Platform, TouchableOpacity, View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
+import { getTheme } from "../../shared/getTheme"
 import Icon from "../Icon/Icon"
 import { ModalSheetProps } from "./ModalSheet.types"
-import { getTheme } from "../../shared/getTheme"
 
 const ModalSheet = ({
     children,

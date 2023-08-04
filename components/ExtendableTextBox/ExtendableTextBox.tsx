@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Box from "../Box/Box"
 import HStack from "../Stacks/HStack"
 import VStack from "../Stacks/VStack"

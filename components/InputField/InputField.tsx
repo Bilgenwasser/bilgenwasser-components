@@ -1,8 +1,9 @@
+import React from "react"
 import { TextInput } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"
-import { InputFieldProps, StyledTextInputProps } from "./InputField.types"
 import { getTheme } from "../../shared/getTheme"
+import { InputFieldProps, StyledTextInputProps } from "./InputField.types"
 
 const InputField = ({
     value,

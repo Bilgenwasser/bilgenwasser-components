@@ -1,3 +1,4 @@
+import React from "react"
 import { Image } from "react-native"
 import styled from "styled-components"
 import { IconProps, StyledImageProps } from "./Icon.types"

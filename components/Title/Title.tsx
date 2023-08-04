@@ -1,8 +1,9 @@
+import React from "react"
 import { Text } from "react-native"
 import styled from "styled-components"
 import { universalColors } from "../../shared/colors"
-import { StyledTextProps, TitleProps } from "./Title.types"
 import { getTheme } from "../../shared/getTheme"
+import { StyledTextProps, TitleProps } from "./Title.types"
 
 const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) => {
     return (

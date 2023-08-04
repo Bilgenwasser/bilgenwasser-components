@@ -1,8 +1,9 @@
+import React from "react"
 import { View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
-import { BoxProps, StyledViewProps } from "./Box.types"
 import { getTheme } from "../../shared/getTheme"
+import { BoxProps, StyledViewProps } from "./Box.types"
 
 const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxProps) => {
     return (

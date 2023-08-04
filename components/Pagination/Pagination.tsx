@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, ScrollView, useColorScheme, View } from "react-native"
 import styled from "styled-components"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
