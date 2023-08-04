@@ -3,6 +3,7 @@ import React from "react"
 import Heading from "./Heading"
 import { View } from "react-native"
 import ViewContainer from "../ViewContainer/ViewContainer"
+import { tr } from "date-fns/locale"
 
 const HeadingMeta: ComponentMeta<typeof Heading> = {
     title: "Heading",
@@ -37,6 +38,7 @@ const HeadingMeta: ComponentMeta<typeof Heading> = {
     },
     args: {
         children: "Heading",
+        alignCenter: true,
     },
 }
 
@@ -46,7 +48,7 @@ type HeadingStory = ComponentStory<typeof Heading>
 
 export const Default: HeadingStory = (args) => (
     <ViewContainer>
-        <View style={{ justifyContent: "center", height: "100%" }}>
+        <View style={{ justifyContent: "center", height: "100%", width: "100%" }}>
             <Heading {...args}>{args.children}</Heading>
         </View>
     </ViewContainer>

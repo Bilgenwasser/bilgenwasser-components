@@ -1,29 +1,27 @@
 import React from "react"
-import { Text } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, Text } from "react-native"
 import { universalColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
-import { HeadingProps, StyledTextProps } from "./Heading.types"
+import { HeadingProps } from "./Heading.types"
 
 const Heading = ({ children: text, noMargin, alignCenter, forceColor, forceTheme }: HeadingProps) => {
+    const color = getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)
+
+    const dynamicStyles = {
+        color: forceColor ?? color,
+        margin: noMargin ? 0 : 10,
+    }
+
     return (
-        <StyledText
-            color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
-            noMargin={!!noMargin}
-            alignCenter={!!alignCenter}
-            forceColor={forceColor}
-        >
-            {text}
-        </StyledText>
+        <Text style={[styles.text, dynamicStyles, { alignSelf: alignCenter ? "center" : "flex-start" }]}>{text}</Text>
     )
 }
 
 export default Heading
 
-const StyledText = styled(Text)<StyledTextProps>`
-    font-size: 24px;
-    font-weight: bold;
-    text-align: ${({ alignCenter }) => (alignCenter ? "center" : "left")};
-    color: ${({ color, forceColor }) => forceColor ?? color};
-    margin: 0 ${({ noMargin }) => (noMargin ? "" : "10px")};
-`
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 24,
+        fontWeight: "bold",
+    },
+})
