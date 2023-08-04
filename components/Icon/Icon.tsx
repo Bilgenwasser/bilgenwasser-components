@@ -1,19 +1,20 @@
 import React from "react"
-import { Image } from "react-native"
-import styled from "styled-components"
-import { IconProps, StyledImageProps } from "./Icon.types"
+import { Image, StyleSheet } from "react-native"
+import { IconProps } from "./Icon.types"
 import { useIcons } from "./useIcons"
 
-const Icon = ({ name, size, rotation, forceTheme }: IconProps) => {
+const Icon = ({ name, size = 24, rotation = 0, forceTheme }: IconProps) => {
     const icons = useIcons(forceTheme)
 
-    return <StyledImage source={icons[name]} size={size ?? 24} rotation={rotation ? rotation : 0} />
+    const styles = StyleSheet.create({
+        image: {
+            width: size,
+            height: size,
+            transform: [{ rotate: `${rotation}deg` }],
+        },
+    })
+
+    return <Image style={styles.image} source={icons[name]} />
 }
 
 export default Icon
-
-const StyledImage = styled(Image)<StyledImageProps>`
-    width: ${({ size }) => size}px;
-    height: ${({ size }) => size}px;
-    transform: rotate(${({ rotation }) => rotation}deg);
-`
