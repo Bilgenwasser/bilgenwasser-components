@@ -1,13 +1,12 @@
-import { useRef, useState } from "react"
-import { Modal, Pressable, TouchableOpacity, View } from "react-native"
-import styled from "styled-components"
+import React, { useRef, useState } from "react"
+import { Modal, Pressable, StyleSheet, TouchableOpacity, View } from "react-native"
 import Box from "../Box/Box"
 import Divider from "../Divider/Divider"
 import Icon from "../Icon/Icon"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import HStack from "../Stacks/HStack"
 import VStack from "../Stacks/VStack"
-import { ModalViewProps, PickerModalProps } from "./PickerModal.types"
+import { PickerModalProps } from "./PickerModal.types"
 import { useScreenDimensions, useViewDimensions } from "./useView"
 
 export const PickerModal = ({
@@ -25,16 +24,18 @@ export const PickerModal = ({
 
     return (
         <Modal visible={isPickerVisible} transparent={true} animationType="fade">
-            <StyledPressable onPress={handlePickerState}>
-                <ModalView
+            <Pressable style={styles.styledPressable} onPress={handlePickerState}>
+                <View
                     ref={modalRef}
                     onLayout={() => useViewDimensions(modalRef, setPickerMenuDimensions)}
-                    position={pickerPosition}
-                    dimensions={pickerMenuDimensions}
-                    screenDimensions={screenDimensions}
+                    style={{
+                        ...styles.modalView,
+                        top: pickerPosition.y - pickerMenuDimensions.height / 2,
+                        left: screenDimensions.width * 0.97 - pickerMenuDimensions.width,
+                    }}
                 >
                     <Box forceTheme={forceTheme} transparent noMargin>
-                        <StyledVStack>
+                        <VStack style={styles.styledVStack}>
                             {options.map((option, index) => {
                                 const { text, icon } = option
                                 return (
@@ -47,39 +48,38 @@ export const PickerModal = ({
                                                 setPickerIcon(icon)
                                             }}
                                         >
-                                            <StyledHStack>
+                                            <HStack style={styles.styledHStack}>
                                                 <PrimaryText>{text}</PrimaryText>
                                                 <Icon name={icon} />
-                                            </StyledHStack>
+                                            </HStack>
                                         </TouchableOpacity>
                                     </VStack>
                                 )
                             })}
-                        </StyledVStack>
+                        </VStack>
                     </Box>
-                </ModalView>
-            </StyledPressable>
+                </View>
+            </Pressable>
         </Modal>
     )
 }
 
-const StyledPressable = styled(Pressable)`
-    flex: 1;
-`
-
-const StyledHStack = styled(HStack)`
-    padding: 5px 15px 5px 10px;
-    justify-content: space-between;
-`
-const ModalView = styled(View)<ModalViewProps>`
-    width: 50%;
-    justify-content: center;
-    border-radius: 15px;
-    position: absolute;
-    top: ${({ position, dimensions }) => position.y - dimensions.height / 2}px;
-    left: ${({ screenDimensions, dimensions }) => screenDimensions.width * 0.97 - dimensions.width}px;
-`
-
-const StyledVStack = styled(VStack)`
-    padding: 5px 0;
-`
+const styles = StyleSheet.create({
+    styledPressable: {
+        flex: 1,
+    },
+    styledHStack: {
+        padding: 5,
+        paddingHorizontal: 10,
+        justifyContent: "space-between",
+    },
+    modalView: {
+        width: "50%",
+        justifyContent: "center",
+        borderRadius: 15,
+        position: "absolute",
+    },
+    styledVStack: {
+        paddingVertical: 5,
+    },
+})

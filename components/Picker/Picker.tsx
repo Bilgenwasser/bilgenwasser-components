@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
-import { Text, TouchableOpacity } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, Text, TouchableOpacity } from "react-native"
 import { universalColors } from "../../shared/colors"
-import { optionalString, StyledColorProps } from "../../shared/primitivTypes"
+import { optionalString } from "../../shared/primitivTypes"
 import Box from "../Box/Box"
 import Icon from "../Icon/Icon"
 import { IconType } from "../Icon/IconType"
@@ -37,7 +36,6 @@ const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }
         <TouchableOpacity
             ref={viewRef}
             onLayout={() =>
-                // Wait for the picker to be mounted before getting its position (needed for sheet)
                 setTimeout(() => {
                     useViewCenter(viewRef, setPickerPosition)
                 }, 500)
@@ -45,16 +43,16 @@ const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }
             onPress={handlePickerState}
         >
             <Box sheet={sheet} forceTheme={forceTheme}>
-                <StyledHStack>
+                <HStack style={styles.hStack}>
                     {!pickerItem ? (
-                        <StyledText color={universalColors.SystemGray}>{placeholderText}</StyledText>
+                        <Text style={[styles.text, { color: universalColors.SystemGray }]}>{placeholderText}</Text>
                     ) : (
                         <HStack>
                             <PrimaryText>{pickerItem}</PrimaryText>
                             <Icon name={pickerIcon!} />
                         </HStack>
                     )}
-                </StyledHStack>
+                </HStack>
             </Box>
             <PickerModal
                 options={options}
@@ -71,12 +69,13 @@ const Picker = ({ placeholderText, options, value, setValue, sheet, forceTheme }
 
 export default Picker
 
-const StyledHStack = styled(HStack)`
-    padding: 5px 15px;
-`
-
-const StyledText = styled(Text)<StyledColorProps>`
-    color: ${({ color }) => color};
-    font-size: 16px;
-    margin: 4px;
-`
+const styles = StyleSheet.create({
+    hStack: {
+        padding: 5,
+        paddingHorizontal: 15,
+    },
+    text: {
+        fontSize: 16,
+        margin: 4,
+    },
+})
