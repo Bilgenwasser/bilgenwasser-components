@@ -1,37 +1,40 @@
 import React from "react"
-import { TouchableOpacity, View } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { universalColors } from "../../shared/colors"
 import Heading from "../Heading/Heading"
-import { BackgroundProps, PrimaryButtonProps } from "./PrimaryButton.types"
+import { PrimaryButtonProps } from "./PrimaryButton.types"
 
 const PrimaryButton = ({ children: text, onPress, smallMargin, disabled }: PrimaryButtonProps) => {
     return (
-        <StyledTouchableOpacity onPress={onPress} disabled={disabled}>
-            <Background disabled={!!disabled} smallMargin={!!smallMargin}>
-                <CenteredView>
+        <TouchableOpacity style={styles.touchableOpacity} onPress={onPress} disabled={disabled}>
+            <View
+                style={[
+                    styles.button,
+                    { backgroundColor: universalColors.Salmon + (disabled ? "aa" : "") },
+                    { marginVertical: smallMargin ? 10 : 20 },
+                ]}
+            >
+                <View style={styles.centeredView}>
                     <Heading forceTheme="dark">{text}</Heading>
-                </CenteredView>
-            </Background>
-        </StyledTouchableOpacity>
+                </View>
+            </View>
+        </TouchableOpacity>
     )
 }
 
 export default PrimaryButton
 
-const StyledTouchableOpacity = styled(TouchableOpacity)`
-    width: 100%;
-`
-
-const Background = styled(View)<BackgroundProps>`
-    background: ${universalColors.Salmon}${({ disabled }) => (disabled ? "aa" : "")};
-    height: 60px;
-    margin: ${({ smallMargin }) => (smallMargin ? "10px 0" : "20px 0")};
-    border-radius: 15px;
-`
-
-const CenteredView = styled(View)`
-    height: 100%;
-    align-self: center;
-    justify-content: center;
-`
+const styles = StyleSheet.create({
+    touchableOpacity: {
+        width: "100%",
+    },
+    button: {
+        height: 60,
+        borderRadius: 15,
+    },
+    centeredView: {
+        height: "100%",
+        alignSelf: "center",
+        justifyContent: "center",
+    },
+})
