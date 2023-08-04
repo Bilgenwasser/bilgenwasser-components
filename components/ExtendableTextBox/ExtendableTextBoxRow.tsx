@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react"
-import { View } from "react-native"
-import styled from "styled-components"
+import React, { useEffect, useState } from "react"
+import { StyleSheet, View } from "react-native"
 import { optionalString, pickerType } from "../../shared/primitivTypes"
 import Icon from "../Icon/Icon"
 import InputField from "../InputField/InputField"
@@ -24,49 +23,48 @@ export const ExtendableTextBoxRow = ({
     }, [text1, text2])
 
     return (
-        <SpacedHStack>
+        <HStack style={styles.spacedContainer}>
             <HStack>
                 <Icon name={icon} size={20} forceTheme={forceTheme} />
-                <StyledView>
+                <View style={styles.container}>
                     <InputField placeholderText={placeholderText1} setValue={setText1} />
-                </StyledView>
+                </View>
             </HStack>
             {pickerItems ? (
-                <PickerContainer>
+                <View style={styles.pickerContainer}>
                     <Picker
                         placeholderText={placeholderText2}
                         options={pickerItems}
                         setValue={setText2}
                         forceTheme={forceTheme}
                     />
-                </PickerContainer>
+                </View>
             ) : (
-                <InputContainer>
+                <View style={styles.inputContainer}>
                     <InputField placeholderText={placeholderText2} setValue={setText2} />
-                </InputContainer>
+                </View>
             )}
-        </SpacedHStack>
+        </HStack>
     )
 }
 
-const SpacedHStack = styled(HStack)`
-    width: 100%;
-    padding: 0 15px;
-    justify-content: space-between;
-`
-
-const PickerContainer = styled(View)`
-    margin-bottom: -15px;
-    margin-left: -50px;
-`
-
-const InputContainer = styled(View)`
-    width: 45%;
-    overflow: scroll;
-`
-
-const StyledView = styled(View)`
-    margin-left: 15px;
-    width: 50%;
-    overflow: scroll;
-`
+const styles = StyleSheet.create({
+    spacedContainer: {
+        width: "100%",
+        padding: 15,
+        justifyContent: "space-between",
+    },
+    pickerContainer: {
+        marginBottom: -15,
+        marginLeft: -50,
+    },
+    inputContainer: {
+        width: "45%",
+        overflow: "scroll",
+    },
+    container: {
+        marginLeft: 15,
+        width: "50%",
+        overflow: "scroll",
+    },
+})

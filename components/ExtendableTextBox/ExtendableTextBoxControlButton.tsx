@@ -1,10 +1,9 @@
-import { TouchableOpacity, View } from "react-native"
-import styled from "styled-components"
+import React from "react"
+import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { universalColors } from "../../shared/colors"
-import { StyledColorProps } from "../../shared/primitivTypes"
+import { getTheme } from "../../shared/getTheme"
 import Icon from "../Icon/Icon"
 import { ExtendableTextBoxControlButtonProps } from "./ExtendableTextBoxControlButton.types"
-import { getTheme } from "../../shared/getTheme"
 
 export const ExtendableTextBoxControlButton = ({
     icon,
@@ -12,34 +11,35 @@ export const ExtendableTextBoxControlButton = ({
     disabled,
     forceTheme,
 }: ExtendableTextBoxControlButtonProps) => {
+    const color = getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)
+
     return (
-        <ButtonContainer>
-            <StyledTouchableOpacity
+        <View style={styles.buttonContainer}>
+            <TouchableOpacity
                 onPress={onPress}
                 disabled={disabled}
-                color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
+                style={[styles.touchableOpacity, { backgroundColor: color }]}
             >
-                <IconContainer>
+                <View style={styles.iconContainer}>
                     <Icon name={icon} size={30} />
-                </IconContainer>
-            </StyledTouchableOpacity>
-        </ButtonContainer>
+                </View>
+            </TouchableOpacity>
+        </View>
     )
 }
 
-const StyledTouchableOpacity = styled(TouchableOpacity)<StyledColorProps>`
-    height: 18px;
-    width: 18px;
-    border-radius: 15px;
-    background: ${({ color }) => color};
-    justify-content: center;
-    align-items: center;
-`
-
-const IconContainer = styled(View)`
-    margin: -6px;
-`
-
-const ButtonContainer = styled(View)`
-    padding: 10px;
-`
+const styles = StyleSheet.create({
+    touchableOpacity: {
+        height: 18,
+        width: 18,
+        borderRadius: 15,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    iconContainer: {
+        margin: -6,
+    },
+    buttonContainer: {
+        padding: 10,
+    },
+})
