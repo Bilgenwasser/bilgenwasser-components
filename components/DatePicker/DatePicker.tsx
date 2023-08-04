@@ -2,8 +2,7 @@ import React from "react"
 import RNDateTimePicker from "@react-native-community/datetimepicker"
 import { format } from "date-fns"
 import { useState } from "react"
-import { Platform, TouchableOpacity, View } from "react-native"
-import styled from "styled-components"
+import { Platform, TouchableOpacity, View, StyleSheet } from "react-native"
 import Box from "../Box/Box"
 import { DatePickerProps } from "./DatePicker.types"
 import PrimaryText from "../PrimaryText/PrimaryText"
@@ -17,9 +16,9 @@ const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps) => {
             <View>
                 <TouchableOpacity onPress={() => setShowPicker(true)}>
                     <Box sheet noMargin>
-                        <StyledView>
+                        <View style={styles.container}>
                             <PrimaryText>{format(date, "dd.MM.yy")}</PrimaryText>
-                        </StyledView>
+                        </View>
                     </Box>
                 </TouchableOpacity>
                 {showPicker && (
@@ -51,6 +50,8 @@ const DatePicker = ({ date, setDate, minDate, maxDate }: DatePickerProps) => {
 
 export default DatePicker
 
-const StyledView = styled(View)`
-    padding: 3px;
-`
+const styles = StyleSheet.create({
+    container: {
+        padding: 3,
+    },
+})
