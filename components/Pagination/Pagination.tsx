@@ -1,9 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react"
-import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, ScrollView, useColorScheme, View } from "react-native"
-import styled from "styled-components"
+import {
+    Dimensions,
+    NativeScrollEvent,
+    NativeSyntheticEvent,
+    ScrollView,
+    StyleSheet,
+    useColorScheme,
+    View,
+} from "react-native"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
 import HStack from "../Stacks/HStack"
-import { DotProps, ImageContainerProps, PaginationProps, SpacerProps } from "./Pagination.types"
+import { PaginationProps } from "./Pagination.types"
 
 const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
     const [currentPage, setCurrentPage] = useState<number>(0)
@@ -34,7 +41,7 @@ const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
     }, [currentPage, appearance])
 
     return (
-        <ScrollViewContainer>
+        <View style={styles.scrollViewContainer}>
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -42,53 +49,45 @@ const Pagination = ({ children, itemSpacing, itemWidth }: PaginationProps) => {
                 snapToInterval={pageWidth + 2 * (itemSpacing ?? defaultSpacing)}
                 onMomentumScrollEnd={handleScrollEnd}
             >
-                <Spacer width={spacerWidth} />
+                <View style={{ width: spacerWidth }} />
                 {children.map((child, index) => (
-                    <PageContainer
+                    <View
                         key={index}
-                        width={pageWidth}
-                        spacing={itemSpacing ?? defaultSpacing}
-                        first={index === 0}
-                        last={index === children.length - 1}
+                        style={{
+                            margin: `0 ${index === children.length - 1 ? 0 : itemSpacing ?? defaultSpacing}px 0 ${
+                                index === 0 ? 0 : itemSpacing ?? defaultSpacing
+                            }px`,
+                            width: pageWidth,
+                        }}
                     >
                         {child}
-                    </PageContainer>
+                    </View>
                 ))}
-                <Spacer width={spacerWidth} />
+                <View style={{ width: spacerWidth }} />
             </ScrollView>
-            <StyledHStack>
+            <HStack style={styles.styledHStack}>
                 {children.map((_, index) => (
-                    <Dot key={index} color={dotsColor[index]} />
+                    <View key={index} style={{ ...styles.dot, backgroundColor: dotsColor[index] }} />
                 ))}
-            </StyledHStack>
-        </ScrollViewContainer>
+            </HStack>
+        </View>
     )
 }
 
 export default Pagination
 
-const ScrollViewContainer = styled(View)`
-    flex: 1;
-`
-
-const Spacer = styled(View)<SpacerProps>`
-    width: ${({ width }) => width}px;
-`
-
-const PageContainer = styled(View)<ImageContainerProps>`
-    margin: 0 ${({ last, spacing }) => (last ? 0 : spacing)}px 0 ${({ first, spacing }) => (first ? 0 : spacing)}px;
-    width: ${({ width }) => width}px;
-`
-
-const StyledHStack = styled(HStack)`
-    margin-top: 10px;
-    justify-content: center;
-`
-
-const Dot = styled(View)<DotProps>`
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    background: ${({ color }) => color};
-    margin: 0 3px;
-`
+const styles = StyleSheet.create({
+    scrollViewContainer: {
+        flex: 1,
+    },
+    styledHStack: {
+        marginTop: 10,
+        justifyContent: "center",
+    },
+    dot: {
+        width: 12,
+        height: 12,
+        borderRadius: 6,
+        margin: "0 3px",
+    },
+})
