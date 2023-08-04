@@ -1,9 +1,8 @@
 import React from "react"
-import { TextInput } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, TextInput } from "react-native"
 import { universalColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
-import { InputFieldProps, StyledTextInputProps } from "./InputField.types"
+import { InputFieldProps } from "./InputField.types"
 
 const InputField = ({
     value,
@@ -17,8 +16,20 @@ const InputField = ({
     hideText,
     alignRight,
 }: InputFieldProps) => {
+    const styles = StyleSheet.create({
+        input: {
+            width: endText ? undefined : "100%",
+            height: 24,
+            color: getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack),
+            fontSize: 16,
+            textAlign: alignRight ? "right" : "left",
+            marginVertical: 5,
+        },
+    })
+
     return (
-        <StyledTextInput
+        <TextInput
+            style={styles.input}
             value={value}
             onChangeText={setValue}
             editable={editable}
@@ -27,20 +38,8 @@ const InputField = ({
             placeholderTextColor={universalColors.SystemGray}
             maxLength={maxLength}
             secureTextEntry={hideText}
-            color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
-            endText={!!endText}
-            alginRight={!!alignRight}
-        ></StyledTextInput>
+        ></TextInput>
     )
 }
 
 export default InputField
-
-const StyledTextInput = styled(TextInput)<StyledTextInputProps>`
-    ${({ endText }) => !endText && "width: 100%;"}
-    height: 24px;
-    color: ${({ color }) => color};
-    font-size: 16px;
-    text-align: ${({ alginRight }) => (alginRight ? "right" : "left")};
-    margin: 5px 0;
-`
