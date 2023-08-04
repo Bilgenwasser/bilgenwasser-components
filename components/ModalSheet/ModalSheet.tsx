@@ -1,7 +1,6 @@
 import BottomSheet from "@gorhom/bottom-sheet"
 import React, { useRef } from "react"
-import { Modal, Platform, TouchableOpacity, View } from "react-native"
-import styled from "styled-components"
+import { Modal, Platform, StyleSheet, TouchableOpacity, View } from "react-native"
 import { darkColors, lightColors, universalColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
 import Icon from "../Icon/Icon"
@@ -19,7 +18,7 @@ const ModalSheet = ({
 
     return (
         <Modal visible={isSheetVisible} transparent={true} animationType="fade">
-            <ModalView>
+            <View style={styles.modalView}>
                 <BottomSheet
                     ref={modalSheetRef}
                     snapPoints={snapPoints ?? [Platform.OS == "ios" ? "93%" : "100%"]}
@@ -30,34 +29,34 @@ const ModalSheet = ({
                     handleIndicatorStyle={{ backgroundColor: universalColors.SystemGray }}
                     enablePanDownToClose
                 >
-                    <SheetViewContainer>
+                    <View style={styles.sheetViewContainer}>
                         {Platform.OS === "android" && (
-                            <StyledTouchableOpacity onPress={() => setIsSheetVisible(false)}>
+                            <TouchableOpacity style={styles.touchableOpacity} onPress={() => setIsSheetVisible(false)}>
                                 <Icon name="multiply" size={35} />
-                            </StyledTouchableOpacity>
+                            </TouchableOpacity>
                         )}
                         {children}
-                    </SheetViewContainer>
+                    </View>
                 </BottomSheet>
-            </ModalView>
+            </View>
         </Modal>
     )
 }
 
+const styles = StyleSheet.create({
+    modalView: {
+        flex: 1,
+        backgroundColor: "rgba(0, 0, 0, 0.75)",
+    },
+    sheetViewContainer: {
+        flex: 1,
+        padding: "0 4%",
+    },
+    touchableOpacity: {
+        position: "absolute",
+        top: -8,
+        right: 10,
+    },
+})
+
 export default ModalSheet
-
-const ModalView = styled(View)`
-    flex: 1;
-    background: rgba(0, 0, 0, 0.75);
-`
-
-const SheetViewContainer = styled(View)`
-    flex: 1;
-    padding: 0 4%;
-`
-
-const StyledTouchableOpacity = styled(TouchableOpacity)`
-    position: absolute;
-    top: -8px;
-    right: 10px;
-`
