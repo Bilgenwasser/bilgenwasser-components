@@ -6,8 +6,3 @@ export interface ViewContainerProps extends ThemeProps {
     noPadding?: boolean
     noAlignment?: boolean
 }
-
-export interface ContainerProps {
-    noPadding: boolean
-    noAlignment: boolean
-}

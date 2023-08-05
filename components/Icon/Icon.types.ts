@@ -6,8 +6,3 @@ export interface IconProps extends ThemeProps {
     size?: number
     rotation?: number
 }
-
-export interface StyledImageProps {
-    size?: number
-    rotation?: number
-}

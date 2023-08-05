@@ -1,4 +1,4 @@
-import { IconType } from "../components/Icon/IconType";
+import { IconType } from "../components/Icon/IconType"
 
 export type optionalString = string | null
 
@@ -13,8 +13,4 @@ export type textBoxStateType = (optionalString | pickerType)[]
 
 export interface ThemeProps {
     forceTheme?: ThemeType
-}
-
-export interface StyledColorProps {
-    color: string
 }

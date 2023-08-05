@@ -8,12 +8,17 @@ const Divider = ({ thickness, forceTheme }: DividerProps) => {
     const thinColors = getTheme(forceTheme, darkColors.SystemGray3, lightColors.SystemGray4)
     const boldColors = getTheme(forceTheme, darkColors.SystemGray2, lightColors.SystemGray3)
 
-    const dynamicStyles = {
-        backgroundColor: thickness === "bold" ? boldColors : thinColors,
-        height: thickness === "bold" ? 1.5 : 0.5,
-    }
-
-    return <View style={[styles.divider, dynamicStyles]} />
+    return (
+        <View
+            style={[
+                styles.divider,
+                {
+                    backgroundColor: thickness === "bold" ? boldColors : thinColors,
+                    height: thickness === "bold" ? 1.5 : 0.5,
+                },
+            ]}
+        />
+    )
 }
 
 export default Divider

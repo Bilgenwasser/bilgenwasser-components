@@ -1,8 +1,4 @@
-import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
-
-export interface StyledTextProps extends StyledColorProps {
-    forceColor?: string
-}
+import { ThemeProps } from "../../shared/primitivTypes"
 
 export interface PrimaryTextProps extends ThemeProps {
     children: string | string[]

@@ -4,8 +4,3 @@ export interface PrimaryButtonProps {
     smallMargin?: boolean
     disabled?: boolean
 }
-
-export interface BackgroundProps {
-    disabled: boolean
-    smallMargin: boolean
-}

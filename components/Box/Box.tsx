@@ -10,15 +10,17 @@ const Box = ({ children, forceTheme, sheet, transparent, noMargin }: BoxProps) =
         sheet ? darkColors.SystemGray5 : darkColors.SystemGray6,
         sheet ? lightColors.SystemGray6 : universalColors.SystemWhite
     )
-    const backgroundColor = transparent ? color + "dd" : color
-    const marginBottom = noMargin ? 0 : 15
 
-    const dynamicStyles = {
-        backgroundColor,
-        marginBottom,
-    }
-
-    return <View style={[styles.container, dynamicStyles]}>{children}</View>
+    return (
+        <View
+            style={[
+                styles.container,
+                { backgroundColor: transparent ? color + "dd" : color, marginBottom: noMargin ? 0 : 15 },
+            ]}
+        >
+            {children}
+        </View>
+    )
 }
 
 export default Box

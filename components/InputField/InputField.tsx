@@ -16,20 +16,14 @@ const InputField = ({
     hideText,
     alignRight,
 }: InputFieldProps) => {
-    const styles = StyleSheet.create({
-        input: {
-            width: endText ? undefined : "100%",
-            height: 24,
-            color: getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack),
-            fontSize: 16,
-            textAlign: alignRight ? "right" : "left",
-            marginVertical: 5,
-        },
-    })
+    const color = getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)
 
     return (
         <TextInput
-            style={styles.input}
+            style={[
+                styles.input,
+                { width: endText ? undefined : "100%", color: color, textAlign: alignRight ? "right" : "left" },
+            ]}
             value={value}
             onChangeText={setValue}
             editable={editable}
@@ -43,3 +37,11 @@ const InputField = ({
 }
 
 export default InputField
+
+const styles = StyleSheet.create({
+    input: {
+        height: 24,
+        fontSize: 16,
+        marginVertical: 5,
+    },
+})

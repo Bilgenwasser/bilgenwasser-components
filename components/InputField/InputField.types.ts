@@ -1,5 +1,5 @@
 import { KeyboardType } from "react-native"
-import { StyledColorProps, ThemeProps } from "../../shared/primitivTypes"
+import { ThemeProps } from "../../shared/primitivTypes"
 
 export interface InputFieldProps extends ThemeProps {
     value?: string
@@ -11,9 +11,4 @@ export interface InputFieldProps extends ThemeProps {
     hideText?: boolean
     endText?: boolean
     alignRight?: boolean
-}
-
-export interface StyledTextInputProps extends StyledColorProps {
-    endText: boolean
-    alginRight: boolean
 }
