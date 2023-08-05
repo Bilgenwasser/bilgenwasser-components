@@ -1,4 +1,5 @@
 const { build } = require("esbuild")
+const { exec } = require("child_process")
 
 const streamPlugin = {
     name: "stream-plugin",
@@ -31,7 +32,24 @@ build({
     },
     sourcemap: true,
     plugins: [streamPlugin],
-}).catch((err) => {
-    console.error(err)
-    process.exit(1)
 })
+    .then(() => {
+        // generate the typings using the Typescript compiler ("tsc")
+        exec("tsc --emitDeclarationOnly", (err, stdout, stderr) => {
+            if (err) {
+                console.error(err)
+                process.exit(1)
+            }
+
+            if (stderr) {
+                console.error(stderr)
+                process.exit(1)
+            }
+
+            console.log(stdout)
+        })
+    })
+    .catch((err) => {
+        console.error(err)
+        process.exit(1)
+    })
