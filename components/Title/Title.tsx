@@ -1,27 +1,21 @@
 import React from "react"
-import { Text } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, Text } from "react-native"
 import { universalColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
-import { StyledTextProps, TitleProps } from "./Title.types"
+import { TitleProps } from "./Title.types"
 
 const Title = ({ children: text, smallMargin, forceTheme }: TitleProps) => {
-    return (
-        <StyledText
-            color={getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)}
-            smallMargin={!!smallMargin}
-        >
-            {text}
-        </StyledText>
-    )
+    const color = getTheme(forceTheme, universalColors.SystemWhite, universalColors.SystemBlack)
+
+    return <Text style={[styles.text, { color: color, margin: smallMargin ? 2 : 10 }]}>{text}</Text>
 }
 
 export default Title
 
-const StyledText = styled(Text)<StyledTextProps>`
-    font-size: 36px;
-    font-weight: bold;
-    color: ${({ color }) => color};
-    margin: 10px 0 ${({ smallMargin }) => (smallMargin ? 2 : 10)}px 0;
-    align-self: flex-start;
-`
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 36,
+        fontWeight: "bold",
+        alignSelf: "flex-start",
+    },
+})
