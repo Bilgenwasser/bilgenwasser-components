@@ -11,10 +11,10 @@ const { execSync } = require("child_process")
     await fs.writeJSON(packageJsonPath, packageJson, { spaces: 2 })
 
     try {
-        // Run "yalc publish" command
-        execSync("yalc publish", { stdio: "inherit" })
+        // Run "yarn build" command
+        execSync("yarn build", { stdio: "inherit" })
     } catch (error) {
-        console.error("Failed to publish with yalc:", error)
+        console.error("Failed to build with esbuild:", error)
     }
 
     try {
