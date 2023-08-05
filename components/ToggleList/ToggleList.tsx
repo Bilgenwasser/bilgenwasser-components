@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
-import { FlatList, Switch, TouchableOpacity } from "react-native"
-import styled from "styled-components"
+import { FlatList, StyleSheet, Switch, TouchableOpacity } from "react-native"
 import { universalColors } from "../../shared/colors"
 import Heading from "../Heading/Heading"
 import HStack from "../HStack/HStack"
@@ -20,13 +19,13 @@ const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
     }, [isEnabled])
 
     return (
-        <PaddedVStack>
+        <VStack style={styles.paddedVStack}>
             {inputRows.map((row, index) => {
                 const { isModalSheetVisible, setIsModalSheetVisible, triggerSheet } = useModalSheet()
                 const { text, info } = row
 
                 return (
-                    <SpacedHStack key={text + index}>
+                    <HStack style={styles.spacedHStack} key={text + index}>
                         <HStack>
                             <PrimaryText>{text}</PrimaryText>
                             {info && (
@@ -49,48 +48,47 @@ const ToggleList = ({ inputRows, setValues }: ToggleListProps) => {
                                 setIsSheetVisible={setIsModalSheetVisible}
                             >
                                 <VStack>
-                                    <StyledHStack>
+                                    <HStack style={styles.styledHStack}>
                                         <Icon name="info" size={32} />
                                         <Heading>{text}</Heading>
-                                    </StyledHStack>
+                                    </HStack>
                                     <FlatList
                                         scrollEnabled={false}
                                         data={info}
                                         renderItem={({ item }) => {
                                             return (
-                                                <ItemContainer>
+                                                <HStack style={styles.itemContainer}>
                                                     <Heading>{"\u2022"}</Heading>
                                                     <PrimaryText>{item}</PrimaryText>
-                                                </ItemContainer>
+                                                </HStack>
                                             )
                                         }}
                                     />
                                 </VStack>
                             </ModalSheet>
                         )}
-                    </SpacedHStack>
+                    </HStack>
                 )
             })}
-        </PaddedVStack>
+        </VStack>
     )
 }
 
 export default ToggleList
 
-const SpacedHStack = styled(HStack)`
-    width: 100%;
-    padding: 3px 0;
-    justify-content: space-between;
-`
-
-const ItemContainer = styled(HStack)`
-    width: 94%;
-`
-
-const StyledHStack = styled(HStack)`
-    margin-bottom: 10px;
-`
-
-const PaddedVStack = styled(VStack)`
-    padding: 7px 0;
-`
+const styles = StyleSheet.create({
+    spacedHStack: {
+        width: "100%",
+        paddingVertical: 3,
+        justifyContent: "space-between",
+    },
+    itemContainer: {
+        width: "94%",
+    },
+    styledHStack: {
+        marginBottom: 10,
+    },
+    paddedVStack: {
+        paddingVertical: 7,
+    },
+})
