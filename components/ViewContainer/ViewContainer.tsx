@@ -1,29 +1,34 @@
 import React from "react"
-import { SafeAreaView, View } from "react-native"
-import styled from "styled-components"
+import { SafeAreaView, StyleSheet, View } from "react-native"
 import { lightColors, universalColors } from "../../shared/colors"
 import { getTheme } from "../../shared/getTheme"
-import { StyledColorProps } from "../../shared/primitivTypes"
-import { ContainerProps, ViewContainerProps } from "./ViewContainer.types"
+import { ViewContainerProps } from "./ViewContainer.types"
 
 const ViewContainer = ({ children, noPadding, noAlignment, forceTheme }: ViewContainerProps) => {
+    const color = getTheme(forceTheme, universalColors.SystemBlack, lightColors.SystemGray6)
+
     return (
-        <StyledView color={getTheme(forceTheme, universalColors.SystemBlack, lightColors.SystemGray6)}>
-            <Container noPadding={!!noPadding} noAlignment={!!noAlignment}>
+        <SafeAreaView style={[styles.view, { backgroundColor: color }]}>
+            <View
+                style={[
+                    styles.container,
+                    { padding: noPadding ? 0 : "4%" },
+                    noAlignment ? {} : { alignItems: "center" },
+                ]}
+            >
                 {children}
-            </Container>
-        </StyledView>
+            </View>
+        </SafeAreaView>
     )
 }
 
 export default ViewContainer
 
-const StyledView = styled(SafeAreaView)<StyledColorProps>`
-    background: ${({ color }) => color};
-`
-
-const Container = styled(View)<ContainerProps>`
-    height: 100%;
-    padding: ${({ noPadding }) => (noPadding ? "0" : "0 4%")};
-    ${({ noAlignment }) => (noAlignment ? "" : "align-items: center;")}
-`
+const styles = StyleSheet.create({
+    view: {
+        flex: 1,
+    },
+    container: {
+        height: "100%",
+    },
+})
