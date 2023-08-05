@@ -7,7 +7,3 @@ export interface TextBoxProps extends ThemeProps {
     alignInputRight?: boolean
     sheet?: boolean
 }
-
-export interface InputContainerProps {
-    align?: boolean
-}

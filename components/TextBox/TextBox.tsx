@@ -1,6 +1,5 @@
 import React from "react"
-import { View } from "react-native"
-import styled from "styled-components"
+import { StyleSheet, View } from "react-native"
 import { pickerType } from "../../shared/primitivTypes"
 import Box from "../Box/Box"
 import Divider from "../Divider/Divider"
@@ -10,7 +9,7 @@ import InputField from "../InputField/InputField"
 import Picker from "../Picker/Picker"
 import PrimaryText from "../PrimaryText/PrimaryText"
 import VStack from "../VStack/VStack"
-import { InputContainerProps, TextBoxProps } from "./TextBox.types"
+import { TextBoxProps } from "./TextBox.types"
 
 const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: TextBoxProps) => {
     return (
@@ -19,8 +18,8 @@ const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: T
                 return (
                     <VStack key={row.name + index}>
                         {index > 0 && <Divider thickness={row.divider} />}
-                        <SpacedHStack>
-                            <ContentContainer>
+                        <HStack style={styles.spacedHStack}>
+                            <View style={styles.contentContainer}>
                                 <HStack>
                                     <Icon
                                         name={row.icon}
@@ -30,9 +29,9 @@ const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: T
                                     />
                                     <PrimaryText forceTheme={forceTheme}>{row.name}</PrimaryText>
                                 </HStack>
-                            </ContentContainer>
+                            </View>
                             {row.picker ? (
-                                <PickerContainer>
+                                <View style={styles.pickerContainer}>
                                     <Picker
                                         placeholderText={row.placeholderText}
                                         value={row.value as pickerType}
@@ -48,9 +47,14 @@ const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: T
                                         sheet={sheet}
                                         forceTheme={forceTheme}
                                     />
-                                </PickerContainer>
+                                </View>
                             ) : (
-                                <InputContainer align={alignInputRight}>
+                                <View
+                                    style={[
+                                        styles.inputContainer,
+                                        { alignItems: alignInputRight ? "flex-end" : "flex-start" },
+                                    ]}
+                                >
                                     <HStack>
                                         <InputField
                                             value={row.value as string}
@@ -73,9 +77,9 @@ const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: T
                                         />
                                         {row.endText && <PrimaryText>{row.endText}</PrimaryText>}
                                     </HStack>
-                                </InputContainer>
+                                </View>
                             )}
-                        </SpacedHStack>
+                        </HStack>
                     </VStack>
                 )
             })}
@@ -85,25 +89,23 @@ const TextBox = ({ inputRows, setValues, forceTheme, alignInputRight, sheet }: T
 
 export default TextBox
 
-const SpacedHStack = styled(HStack)`
-    justify-content: space-between;
-`
-
-const ContentContainer = styled(View)`
-    height: 40px;
-    margin-left: 15px;
-    justify-content: center;
-`
-
-const PickerContainer = styled(View)`
-    margin-bottom: -15px;
-`
-
-const InputContainer = styled(View)<InputContainerProps>`
-    height: 40px;
-    width: 48%;
-    margin-right: 15px;
-    justify-content: center;
-    overflow: scroll;
-    align-items: ${({ align }) => (align ? "flex-end" : "flex-start")};
-`
+const styles = StyleSheet.create({
+    spacedHStack: {
+        justifyContent: "space-between",
+    },
+    contentContainer: {
+        height: 40,
+        marginLeft: 15,
+        justifyContent: "center",
+    },
+    pickerContainer: {
+        marginBottom: -15,
+    },
+    inputContainer: {
+        height: 40,
+        width: "48%",
+        marginRight: 15,
+        justifyContent: "center",
+        overflow: "scroll",
+    },
+})
